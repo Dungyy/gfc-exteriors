@@ -10,6 +10,7 @@
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
-    "tailwindcss/classnames-order": "warn"
+    "tailwindcss/classnames-order": "warn",
+    "react/no-unescaped-entities": "off"
   }
 }
