@@ -9,14 +9,14 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
-        <nav className="bg-grey-50 shadow-md sticky top-0 z-50">
-            <div className="container mx-auto px-4 py-3">
+        <nav className="bg-gfc-light-gray shadow-md sticky top-0 z-50">
+            <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* Logo and Brand */}
                     <Link href="/" className="flex items-center space-x-2">
                         <div className="relative w-20 h-20">
                             <Image
-                                src="/gfc2.jpeg"
+                                src="/bitmap.png"
                                 alt="GFC Exteriors Logo"
                                 fill
                                 className="object-contain mix-blend-darken"
@@ -106,7 +106,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-200 py-2">
+                <div className="md:hidden bg-gfc-light-gray border-t border-gray-200 py-2">
                     <div className="container mx-auto px-4">
                         <Link href="#services" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold">
                             Services
