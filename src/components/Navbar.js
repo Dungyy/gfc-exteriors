@@ -1,14 +1,69 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const navRef = useRef(null)
 
     // Function to close menu on link click
     const closeMenu = () => setIsMenuOpen(false)
+
+    // Animation variants for the hamburger icon
+    const topLineVariants = {
+        closed: { rotate: 0, y: 0 },
+        open: { rotate: 45, y: 9 }
+    }
+
+    const middleLineVariants = {
+        closed: { opacity: 1 },
+        open: { opacity: 0 }
+    }
+
+    const bottomLineVariants = {
+        closed: { rotate: 0, y: 0 },
+        open: { rotate: -45, y: -9 }
+    }
+
+    // Mobile menu animation variants
+    const menuVariants = {
+        closed: {
+            opacity: 0,
+            height: 0,
+            transition: {
+                duration: 0.3,
+                when: "afterChildren",
+                staggerChildren: 0.05,
+                staggerDirection: -1
+            }
+        },
+        open: {
+            opacity: 1,
+            height: "auto",
+            transition: {
+                duration: 0.3,
+                when: "beforeChildren",
+                staggerChildren: 0.05,
+                staggerDirection: 1
+            }
+        }
+    }
+
+    const menuItemVariants = {
+        closed: {
+            opacity: 0,
+            y: -10,
+            transition: { duration: 0.2 }
+        },
+        open: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.2 }
+        }
+    }
 
     return (
         <nav className="bg-gfc-light-gray shadow-md sticky top-0 z-50">
@@ -46,53 +101,76 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Animated Hamburger Menu Button */}
                     <div className="md:hidden py-2 px-4">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="text-gfc-dark-gray focus:outline-none"
+                            className="text-gfc-dark-gray focus:outline-none relative w-8 h-8 flex items-center justify-center"
+                            aria-label="Toggle menu"
                         >
-                            {isMenuOpen ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            )}
+                            <div className="relative w-6 h-6">
+                                <motion.div
+                                    variants={topLineVariants}
+                                    initial="closed"
+                                    animate={isMenuOpen ? "open" : "closed"}
+                                    className="absolute top-1 w-6 h-0.5 bg-gfc-dark-gray"
+                                    transition={{ duration: 0.3 }}
+                                />
+                                <motion.div
+                                    variants={middleLineVariants}
+                                    initial="closed"
+                                    animate={isMenuOpen ? "open" : "closed"}
+                                    className="absolute top-[11px] w-6 h-0.5 bg-gfc-dark-gray"
+                                    transition={{ duration: 0.3 }}
+                                />
+                                <motion.div
+                                    variants={bottomLineVariants}
+                                    initial="closed"
+                                    animate={isMenuOpen ? "open" : "closed"}
+                                    className="absolute bottom-1 w-6 h-0.5 bg-gfc-dark-gray"
+                                    transition={{ duration: 0.3 }}
+                                />
+                            </div>
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {isMenuOpen && (
-                <div className="md:hidden bg-gfc-light-gray border-t border-gray-200 py-2">
-                    <div className="container mx-auto px-4">
-                        <div onClick={closeMenu}>
-                            <Link href="#services" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold">
-                                Services
-                            </Link>
+            {/* Animated Mobile Menu */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        className="md:hidden bg-gfc-light-gray border-t border-gray-200 overflow-hidden"
+                        variants={menuVariants}
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                    >
+                        <div className="container mx-auto px-4 py-2">
+                            <motion.div variants={menuItemVariants} onClick={closeMenu}>
+                                <Link href="#services" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold transition-colors">
+                                    Services
+                                </Link>
+                            </motion.div>
+                            <motion.div variants={menuItemVariants} onClick={closeMenu}>
+                                <Link href="#about" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold transition-colors">
+                                    About
+                                </Link>
+                            </motion.div>
+                            <motion.div variants={menuItemVariants} onClick={closeMenu}>
+                                <Link href="#contact" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold transition-colors">
+                                    Contact
+                                </Link>
+                            </motion.div>
+                            <motion.div variants={menuItemVariants} onClick={closeMenu}>
+                                <Link href="#contact" className="block py-3 mt-2 text-center bg-gfc-gold hover:bg-gfc-light-gold text-white rounded-md transition-colors">
+                                    Get Free Quote
+                                </Link>
+                            </motion.div>
                         </div>
-                        <div onClick={closeMenu}>
-                            <Link href="#about" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold">
-                                About
-                            </Link>
-                        </div>
-                        <div onClick={closeMenu}>
-                            <Link href="#contact" className="block py-2 text-gfc-dark-gray hover:text-gfc-gold">
-                                Contact
-                            </Link>
-                        </div>
-                        <div onClick={closeMenu}>
-                            <Link href="#contact" className="block py-2 mt-2 text-center bg-gfc-gold text-white rounded-md">
-                                Get Free Quote
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     )
 }
