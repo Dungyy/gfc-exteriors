@@ -24,6 +24,32 @@ const CallBanner = () => {
         return () => window.removeEventListener('resize', checkMobile)
     }, [])
 
+    // Button animation variants
+    const buttonVariants = {
+        hover: {
+            scale: 1.05,
+            transition: { 
+                type: "spring", 
+                stiffness: 400, 
+                damping: 10 
+            }
+        },
+        tap: { scale: 0.95 }
+    }
+
+    // Pulsing animation for the quote button
+    const quoteButtonVariants = {
+        initial: { scale: 1 },
+        animate: {
+            scale: [1, 1.05, 1],
+            transition: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse"
+            }
+        }
+    }
+
     // Don't render anything on desktop
     if (!isMobile) return null
 
@@ -41,7 +67,11 @@ const CallBanner = () => {
                     className="flex-1 flex flex-col items-center justify-center py-2 mx-1 bg-gfc-gold text-gfc-black rounded-md"
                 >
                     <motion.div 
-                        whileTap={{ scale: 0.95 }}
+                        variants={quoteButtonVariants}
+                        initial="initial"
+                        animate="animate"
+                        whileHover="hover"
+                        whileTap="tap"
                         className="flex flex-col items-center"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,12 +88,22 @@ const CallBanner = () => {
                     className="flex-1 flex flex-col items-center justify-center py-2 mx-1 border border-gray-200 rounded-md"
                 >
                     <motion.div
-                        whileTap={{ scale: 0.95 }}
+                        variants={buttonVariants}
+                        whileHover="hover"
+                        whileTap="tap"
                         className="flex flex-col items-center"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gfc-gold mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <motion.svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="h-5 w-5 text-gfc-gold mb-1" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                            animate={{ rotate: [0, 5, -5, 0] }}
+                            transition={{ duration: 0.5, repeat: 3, repeatDelay: 4 }}
+                        >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
+                        </motion.svg>
                         <span className="text-xs font-bold">CESAR</span>
                         <span className="text-xs">320-226-2128</span>
                     </motion.div>
@@ -75,12 +115,22 @@ const CallBanner = () => {
                     className="flex-1 flex flex-col items-center justify-center py-2 mx-1 border border-gray-200 rounded-md"
                 >
                     <motion.div
-                        whileTap={{ scale: 0.95 }}
+                        variants={buttonVariants}
+                        whileHover="hover"
+                        whileTap="tap"
                         className="flex flex-col items-center"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gfc-gold mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <motion.svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            className="h-5 w-5 text-gfc-gold mb-1" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke="currentColor"
+                            animate={{ rotate: [0, 5, -5, 0] }}
+                            transition={{ duration: 0.5, repeat: 3, repeatDelay: 5 }}
+                        >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
+                        </motion.svg>
                         <span className="text-xs font-bold">JOSE</span>
                         <span className="text-xs">320-435-1703</span>
                     </motion.div>
