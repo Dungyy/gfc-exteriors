@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -9,8 +9,28 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const navRef = useRef(null)
 
-    // Function to close menu on link click
+    // Function to close menu
     const closeMenu = () => setIsMenuOpen(false)
+
+    // Close menu on scroll or clicking outside
+    useEffect(() => {
+        const handleScroll = () => closeMenu()
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                closeMenu()
+            }
+        }
+
+        if (isMenuOpen) {
+            window.addEventListener('scroll', handleScroll)
+            document.addEventListener('mousedown', handleClickOutside)
+        }
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [isMenuOpen])
 
     // Animation variants for the hamburger icon
     const topLineVariants = {
@@ -56,17 +76,17 @@ const Navbar = () => {
         closed: {
             opacity: 0,
             y: -10,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.1 }
         },
         open: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.2 }
+            transition: { duration: 0.1 }
         }
     }
 
     return (
-        <nav className="bg-gfc-light-gray shadow-md sticky top-0 z-50">
+        <nav className="bg-gfc-light-gray shadow-md sticky top-0 z-50" ref={navRef}>
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* Logo and Brand */}
