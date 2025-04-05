@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "license": "MIT",
+  "description": "GFC Exteriors - A Next.js 15.2.4 project with Tailwind CSS",
+  "author": "GFC Exteriors - dungy",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
