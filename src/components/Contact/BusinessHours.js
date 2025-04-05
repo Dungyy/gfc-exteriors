@@ -8,10 +8,10 @@ const BusinessHours = () => {
             <h4 className="text-white font-semibold mb-4">Business Hours</h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
                 {businessHours.map((item, index) => (
-                    <>
-                        <div key={`day-${index}`} className="text-gray-300">{item.day}</div>
-                        <div key={`hours-${index}`} className="text-right text-gray-300">{item.hours}</div>
-                    </>
+                    <div key={item.day || index}>
+                        <div className="text-gray-300">{item.day}</div>
+                        <div className="text-right text-gray-300">{item.hours}</div>
+                    </div>
                 ))}
             </div>
         </div>

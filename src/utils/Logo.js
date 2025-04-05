@@ -1,5 +1,5 @@
 // components/Logo.jsx
-const Logo = ({ className = '' }) => {
+export const Logo = ({ className = '' }) => {
   return (
     <div className={`relative ${className}`}>
       <div className="flex flex-col items-center">
@@ -12,7 +12,7 @@ const Logo = ({ className = '' }) => {
         </div>
 
         {/* GFC Text */}
-        <div className="flex items-center relative">
+        <div className="flex items-center relative mb-3">
           <span className="text-5xl font-extrabold tracking-tighter text-gfc-black">
             <span className="relative">
               G<span className="absolute inset-0 text-transparent -m-[2px] stroke-gfc-gold">G</span>
@@ -27,10 +27,9 @@ const Logo = ({ className = '' }) => {
         </div>
 
         {/* Divider line */}
-        <div className="h-0.5 w-full bg-gfc-black mt-1 relative">
+        <div className="h-3 w-full bg-gfc-black mt-1 relative">
           <div className="h-0.5 w-full absolute -top-0.5 bg-gfc-gold"></div>
         </div>
-
         {/* Exteriors text */}
         <div className="mt-2 text-sm font-semibold tracking-wider text-gfc-black">
           Exteriors LLC

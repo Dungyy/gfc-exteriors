@@ -1,83 +1,250 @@
 // components/About.js
-import Logo from '../../utils/Logo'
-import { features } from './constants'
+
+"use client";
+import { useEffect, useState, useRef } from 'react';
+import Logo from '../../utils/Logo';
+import { TbCertificate } from 'react-icons/tb';
+import { GiHouse } from 'react-icons/gi';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { features } from './constants';
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Create scroll-based animations
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
+  
+  // Parallax effect for decorative elements
+  const decorLeft = useTransform(scrollYProgress, [0, 1], [-5, -15]);
+  const decorRight = useTransform(scrollYProgress, [0, 1], [5, 15]);
+
+  // Trigger entrance animations on component mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Custom animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { 
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1.0] // Custom cubic-bezier easing
+      }
+    }
+  };
 
   return (
-    <section id="about" className="py-16 md:py-16 lg:py-20 bg-gfc-light-gray">
-      <br />
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center">
+    <section 
+      id="about" 
+      ref={sectionRef}
+      className="py-16 md:py-16 lg:py-24 bg-gfc-light-gray relative overflow-hidden"
+    >
+      <br/>
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-gfc-gold"></div>
+        <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full bg-gfc-gold"></div>
+      </div>
+      
+      <motion.div 
+        style={{ opacity, scale, y }}
+        className="container mx-auto px-4 relative z-10"
+      >
+        <motion.div 
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          variants={containerVariants}
+          className="flex flex-col lg:flex-row items-center"
+        >
           {/* Image/Visual Side */}
-
-          <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+          <motion.div 
+            variants={itemVariants}
+            className="w-full lg:w-1/2 mb-12 lg:mb-0 lg:pr-12"
+          >
             <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-
               {/* Main visual */}
-              <div className="bg-white p-3 sm:p-4 rounded-lg shadow-lg">
-                <div className="aspect-w-4 aspect-h-3 bg-gray-100 rounded overflow-hidden">
-
-                  <div className="absolute inset-0 flex items-center justify-center bg-gfc-black">
-                    <div className="text-center mb-8">
+              <motion.div 
+                whileHover={{ 
+                  y: -5, 
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
+                }}
+                transition={{ duration: 0.4 }}
+                className=" p-4 sm:p-6 rounded-xl shadow-lg backdrop-blur-sm"
+              >
+                <div className=" md:mt-9  aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
+                  <div className="md:mt-9 absolute inset-0 flex items-center justify-center bg-gfc-black">
+                    <motion.div 
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: 0.4,
+                        ease: "easeOut" 
+                      }}
+                      className="text-center mb-8 "
+                    >
                       <Logo className="w-40 sm:w-60 h-auto mb-4" />
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-16 sm:w-24 h-16 sm:h-24 bg-gfc-gold rounded-lg opacity-20"></div>
-              <div className="absolute -bottom-4 -right-4 w-20 sm:w-32 h-20 sm:h-32 bg-gfc-gold rounded-lg opacity-20"></div>
+              <motion.div 
+                style={{ x: decorLeft }}
+                className="absolute -top-6 -left-6 w-20 sm:w-28 h-20 sm:h-28 bg-gfc-gold rounded-xl opacity-20"
+              ></motion.div>
+              
+              <motion.div 
+                style={{ x: decorRight }}
+                className="absolute -bottom-6 -right-6 w-24 sm:w-32 h-24 sm:h-32 bg-gfc-gold rounded-xl opacity-20"
+              ></motion.div>
 
               {/* Years of experience badge */}
-              <div className="absolute -right-3 sm:-right-5 -bottom-3 sm:-bottom-5 bg-gfc-gold text-gfc-black w-16 h-16 sm:w-24 sm:h-24 rounded-full flex items-center justify-center shadow-lg">
+              <motion.div 
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: isVisible ? 1 : 0, opacity: isVisible ? 1 : 0 }}
+                transition={{ 
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 15,
+                  delay: 0.8
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.3)" 
+                }}
+                className="absolute -right-3 sm:-right-5 -bottom-3 sm:-bottom-5 bg-gfc-gold text-gfc-black w-20 h-20 sm:w-28 sm:h-28 rounded-full flex items-center justify-center shadow-lg"
+              >
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold">5+</div>
-                  <div className="text-[10px] sm:text-xs">Years Exp.</div>
+                  <div className="text-xl sm:text-3xl font-bold">5+</div>
+                  <div className="text-[10px] sm:text-xs font-medium">Years Exp.</div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content Side */}
-          <div className="w-full lg:w-1/2">
-            <br />
-            <div className="text-sm font-semibold text-gfc-gold tracking-widest uppercase mb-2">
+          <motion.div variants={itemVariants} className="w-full lg:w-1/2">
+            <motion.div 
+              variants={itemVariants}
+              className="text-sm font-semibold text-gfc-gold tracking-widest uppercase mb-3 flex items-center"
+            >
+              <GiHouse className="mr-2 text-lg" />
               About Our Company
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-gfc-black">
+            </motion.div>
+            
+            <motion.h2 
+              variants={itemVariants}
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-gfc-black"
+            >
               Your Trusted Partner for Exterior Services
-            </h2>
+            </motion.h2>
 
-            <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
+            <motion.p 
+              variants={itemVariants}
+              className="text-gray-700 mb-5 sm:mb-6 text-sm sm:text-base leading-relaxed"
+            >
               GFC Exteriors LLC is a locally owned and operated company providing top-quality
               exterior services to homeowners across the region. With a focus on customer
               satisfaction and exceptional workmanship, we've built a reputation for reliability and
               excellence.
-            </p>
+            </motion.p>
 
-            <p className="text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base">
+            <motion.p 
+              variants={itemVariants}
+              className="text-gray-700 mb-8 sm:mb-10 text-sm sm:text-base leading-relaxed"
+            >
               Our team brings together years of experience in all aspects of exterior home services.
               From siding and gutters to lawn care and pressure washing, we have the expertise to
               handle all your exterior maintenance needs with precision and care.
-            </p>
+            </motion.p>
 
             {/* Feature boxes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start p-3 sm:p-4 bg-white rounded-lg shadow-sm">
-                  <div className="text-xl sm:text-2xl mr-3 sm:mr-4 text-gfc-gold">{feature.icon}</div>
-                  <div>
-                    <h3 className="font-bold text-sm sm:text-base text-gfc-dark-gray">{feature.title}</h3>
-                    <p className="text-xs sm:text-sm text-gray-600">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+            <motion.div 
+              variants={itemVariants}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8 sm:mb-10"
+            >
+              <AnimatePresence>
+                {features.map((feature, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ 
+                      opacity: isVisible ? 1 : 0, 
+                      y: isVisible ? 0 : 20,
+                      transition: { 
+                        duration: 0.4, 
+                        delay: 0.9 + (index * 0.15)
+                      }
+                    }}
+                    whileHover={{ 
+                      y: -8,
+                      boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.2)",
+                      transition: { duration: 0.3 }
+                    }}
+                    className="flex items-start p-4 sm:p-5 bg-white rounded-xl shadow-sm transition-all duration-300 backdrop-blur-sm bg-white/90 border border-gray-100"
+                  >
+                    <motion.div 
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotate: [0, -5, 5, -5, 0],
+                        transition: { duration: 0.5 }
+                      }}
+                      className="text-2xl sm:text-3xl mr-4 sm:mr-5 text-gfc-gold"
+                    >
+                      {feature.icon}
+                    </motion.div>
+                    <div>
+                      <h3 className="font-bold text-sm sm:text-base text-gfc-dark-gray">{feature.title}</h3>
+                      <p className="text-xs sm:text-sm text-gray-600 mt-1">{feature.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+            
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ x: 5 }}
+              className="flex items-center mt-10 py-3 px-4 rounded-lg border border-gray-200 inline-block"
+            >
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                <TbCertificate className="text-2xl text-gfc-gold mr-3" />
+              </motion.div>
+              <span className="text-sm font-medium text-gray-700">Licensed, Bonded & Insured</span>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

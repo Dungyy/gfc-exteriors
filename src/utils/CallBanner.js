@@ -51,7 +51,7 @@ const CallBanner = () => {
     }
 
     // Don't render anything on desktop
-    if (!isMobile) return null
+    if (typeof window !== 'undefined' && !isMobile) return null
 
     return (
         <motion.div
@@ -59,12 +59,13 @@ const CallBanner = () => {
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            style={{ position: 'fixed', bottom: 0 }}
         >
             <div className="flex justify-between items-center px-4 py-2">
                 {/* Get Quote Button */}
                 <Link 
                     href="#contact" 
-                    className="flex-1 flex flex-col items-center justify-center py-2 mx-1 bg-gfc-gold text-gfc-black rounded-md"
+                    className="p-8 flex-1 flex flex-col items-center justify-center py-2 mx-1 bg-gfc-gold text-gfc-black rounded-md"
                 >
                     <motion.div 
                         variants={quoteButtonVariants}
@@ -85,7 +86,7 @@ const CallBanner = () => {
                 {/* Call Cesar */}
                 <a
                     href="tel:3202262128"
-                    className="flex-1 flex flex-col items-center justify-center py-2 mx-1 border border-gray-200 rounded-md"
+                    className="p-3 flex-1 flex flex-col items-center justify-center py-2 mx-1 border border-gray-200 rounded-md"
                 >
                     <motion.div
                         variants={buttonVariants}
@@ -112,7 +113,7 @@ const CallBanner = () => {
                 {/* Call Jose */}
                 <a
                     href="tel:3204351703"
-                    className="flex-1 flex flex-col items-center justify-center py-2 mx-1 border border-gray-200 rounded-md"
+                    className="p-3 flex-1 flex flex-col items-center justify-center py-2 mx-1 border border-gray-200 rounded-md"
                 >
                     <motion.div
                         variants={buttonVariants}

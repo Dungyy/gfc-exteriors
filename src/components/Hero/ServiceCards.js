@@ -2,17 +2,20 @@
 
 import { motion } from 'framer-motion'
 import { fadeInUpVariants, serviceCardVariants } from './AnimationVariants'
+import { FaHome, FaLeaf } from 'react-icons/fa'
+import { MdOutlineRoofing } from "react-icons/md";
+import { FaWater } from 'react-icons/fa'
 
 const ServiceCards = () => {
     const services = [
-        { name: 'Siding', icon: '🏠' },
-        { name: 'Gutters', icon: '🌧️' },
-        { name: 'Lawn Care', icon: '🌿' },
-        { name: 'Pressure Washing', icon: '💦' }
+        { name: 'Siding', icon: <FaHome size={24} /> },
+        { name: 'Gutters', icon: <MdOutlineRoofing  size={24} /> },
+        { name: 'Lawn Care', icon: <FaLeaf size={24} /> },
+        { name: 'Pressure Washing', icon: <FaWater size={24} /> }
     ]
 
     return (
-        <motion.div 
+        <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16"
             variants={fadeInUpVariants}
             initial="hidden"
@@ -29,14 +32,14 @@ const ServiceCards = () => {
                     whileHover="hover"
                 >
                     {/* Card background gradient that appears on hover */}
-                    <motion.div 
+                    <motion.div
                         className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent opacity-0"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
                     />
-                    
-                    <motion.div 
+
+                    <motion.div
                         className="text-gfc-gold mb-2 text-xl relative z-10"
                         whileHover={{ scale: 1.2, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}

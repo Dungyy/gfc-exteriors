@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { services, quickLinks } from './constants'
+import { FaPhone, FaEnvelope, FaHome, FaTools } from 'react-icons/fa'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -25,15 +26,27 @@ const Footer = () => {
               exceptional customer service.
             </p>
             <div className="text-gray-300 text-sm">
-              <p className="mb-2">Cesar: 320-226-2128</p>
-              <p className="mb-2">Jose: 320-435-1703</p>
-              <p>gfcexteriors@gmail.com</p>
+              <p className="mb-2 flex items-center">
+                <FaPhone className="text-gfc-gold mr-2" />
+                Cesar: 320-226-2128
+              </p>
+              <p className="mb-2 flex items-center">
+                <FaPhone className="text-gfc-gold mr-2" />
+                Jose: 320-435-1703
+              </p>
+              <p className="flex items-center">
+                <FaEnvelope className="text-gfc-gold mr-2" />
+                gfcexteriors@gmail.com
+              </p>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Our Services</h3>
+            <h3 className="text-xl font-bold mb-4 flex items-center">
+              <FaTools className="text-gfc-gold mr-2" />
+              Our Services
+            </h3>
             <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
@@ -51,7 +64,10 @@ const Footer = () => {
 
           {/* Quick Links & Scroll to Top */}
           <div className="relative">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4 flex items-center">
+              <FaHome className="text-gfc-gold mr-2" />
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -67,7 +83,7 @@ const Footer = () => {
             </ul>
             {/* Scroll to top button */}
             <motion.div
-              className="absolute right-5 top-3 mt-4"
+              className="absolute right-8 top-3 mt-4"
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
             >
