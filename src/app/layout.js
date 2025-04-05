@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: 'GFC Exteriors LLC',
   description:
-    'GFC Exteriors LLC provides professional exterior services including siding, gutters, lawn care, pressure washing, and more in the St. Cloud, MN area.',
+    'GFC Exteriors LLC provides professional exterior services including siding, gutters, lawn care, pressure washing, and more in the Montevideo, MN area.',
   icons: {
     icon: '/favicon.ico',
   },

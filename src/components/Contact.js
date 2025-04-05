@@ -111,8 +111,14 @@ const Contact = () => {
                                     </div>
                                     <div className="ml-4">
                                         <h4 className="text-white font-semibold">Phone</h4>
-                                        <p className="text-gray-300 mt-1">Cesar: 320-226-2128</p>
-                                        <p className="text-gray-300">Jose: 320-435-1703</p>
+                                        <p className="text-gray-300 mt-1"
+                                            onClick={() => window.location.href = 'tel:3202262128'}>
+                                            Cesar: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>320-226-2128</span>
+                                        </p>
+                                        <p className="text-gray-300 mt-1"
+                                            onClick={() => window.location.href = 'tel:3204351703'}>
+                                            Jose: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>320-435-1703</span>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -135,7 +141,10 @@ const Contact = () => {
                                     </div>
                                     <div className="ml-4">
                                         <h4 className="text-white font-semibold">Email</h4>
-                                        <p className="text-gray-300 mt-1">gfcexteriors@gmail.com</p>
+                                        <p className="text-gray-300 mt-1 hover:text-gfc-gold cursor-pointer transition-colors"
+                                            onClick={() => window.location.href = 'mailto:gfcexteriors@gmail.com'}>
+                                            gfcexteriors@gmail.com
+                                        </p>
                                     </div>
                                 </div>
 
@@ -164,7 +173,7 @@ const Contact = () => {
                                     </div>
                                     <div className="ml-4">
                                         <h4 className="text-white font-semibold">Service Area</h4>
-                                        <p className="text-gray-300 mt-1">St. Cloud, MN and surrounding areas</p>
+                                        <p className="text-gray-300 mt-1">Montevideo, MN and surrounding areas</p>
                                     </div>
                                 </div>
                             </div>

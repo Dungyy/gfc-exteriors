@@ -18,7 +18,7 @@ export default function Home() {
         <title>GFC Exteriors LLC & Services | Professional Exterior Solutions</title>
         <meta
           name="description"
-          content="GFC Exteriors LLC provides professional exterior services including siding, gutters, lawn care, pressure washing, and more in the St. Cloud, MN area."
+          content="GFC Exteriors LLC provides professional exterior services including siding, gutters, lawn care, pressure washing, and more in the Montevideo, MN area."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

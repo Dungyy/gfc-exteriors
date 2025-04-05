@@ -10,7 +10,7 @@ const Testimonials = () => {
     {
       text: "GFC Exteriors did an incredible job with our siding replacement. Their attention to detail and quality of work exceeded our expectations. We couldn't be happier with the results!",
       author: 'Michael R.',
-      location: 'St. Cloud, MN',
+      location: 'Montevideo, MN',
       rating: 5,
     },
     {
@@ -62,9 +62,8 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`transition-opacity duration-700 absolute inset-0 flex items-center justify-center p-10 ${
-                  index === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
+                className={`transition-opacity duration-700 absolute inset-0 flex items-center justify-center p-10 ${index === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
               >
                 <div className="text-center">
                   <p className="text-lg text-gray-700 mb-6">{testimonial.text}</p>
@@ -97,9 +96,8 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? 'bg-gfc-gold w-6' : 'bg-gray-300'
-                  }`}
+                  className={`h-2 w-2 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-gfc-gold w-6' : 'bg-gray-300'
+                    }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 ></button>
               ))}
