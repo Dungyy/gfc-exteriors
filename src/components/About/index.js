@@ -1,29 +1,8 @@
 // components/About.js
-import Logo from './Logo'
+import Logo from '../../utils/Logo'
+import { features } from './constants'
 
 const About = () => {
-  const features = [
-    {
-      title: 'Experienced Team',
-      description: 'Our professionals have years of industry experience.',
-      icon: '👷‍♂️',
-    },
-    {
-      title: 'Quality Materials',
-      description: 'We use only the highest quality materials for lasting results.',
-      icon: '🔨',
-    },
-    {
-      title: 'Satisfaction Guaranteed',
-      description: 'Your complete satisfaction is our top priority.',
-      icon: '👍',
-    },
-    {
-      title: 'Competitive Pricing',
-      description: 'Quality service at fair and transparent prices.',
-      icon: '💰',
-    },
-  ]
 
   return (
     <section id="about" className="py-16 md:py-16 lg:py-20 bg-gfc-light-gray">
@@ -31,14 +10,14 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Image/Visual Side */}
-          
+
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
             <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-              
+
               {/* Main visual */}
               <div className="bg-white p-3 sm:p-4 rounded-lg shadow-lg">
                 <div className="aspect-w-4 aspect-h-3 bg-gray-100 rounded overflow-hidden">
-                  
+
                   <div className="absolute inset-0 flex items-center justify-center bg-gfc-black">
                     <div className="text-center mb-8">
                       <Logo className="w-40 sm:w-60 h-auto mb-4" />
@@ -63,7 +42,7 @@ const About = () => {
 
           {/* Content Side */}
           <div className="w-full lg:w-1/2">
-          <br />
+            <br />
             <div className="text-sm font-semibold text-gfc-gold tracking-widest uppercase mb-2">
               About Our Company
             </div>

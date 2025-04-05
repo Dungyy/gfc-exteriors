@@ -1,33 +1,19 @@
 // pages/index.js
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/Nav'
 import Hero from '../components/Hero'
 import Services from '../components/Services'
 import About from '../components/About'
-import Testimonials from '../components/Testimonials'
-import Projects from '../components/Projects'
+// not showing yet
+// import Testimonials from '../components/Testimonials'
+// import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
-import AnimatedSection from '../components/AnimatedSection'
-import CallBanner from '../components/CallBanner'
+import AnimatedSection from '../utils/AnimatedSection'
+import CallBanner from '../utils/CallBanner'
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>GFC Exteriors LLC & Services | Professional Exterior Solutions</title>
-        <meta
-          name="description"
-          content="GFC Exteriors LLC provides professional exterior services including siding, gutters, lawn care, pressure washing, and more in the Montevideo, MN area."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
       <div className="min-h-screen flex flex-col pb-16 md:pb-0">
         <Navbar />
         <main>
