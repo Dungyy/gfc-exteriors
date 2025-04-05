@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from 'next/font/google'
-// import CallBanner from '@/components/CallBanner'
 import './globals.css'
 
 const geistSans = Geist({
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased md:pb-0`}>{children}</body>
-      {/* <CallBanner /> */}
     </html>
   )
 }
