@@ -5,7 +5,7 @@ import { FaTools, FaInfoCircle, FaAddressCard, FaFileInvoiceDollar } from "react
 
 const DesktopMenu = () => {
     return (
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center mr-4">
             <nav className="flex items-center space-x-1 mr-2">
                 <Link 
                     href="#services" 

@@ -10,7 +10,7 @@ const MobileMenu = ({ isOpen, closeMenu }) => {
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    className="md:hidden bg-white shadow-lg border-t border-gray-100 overflow-hidden"
+                    className="md:hidden shadow-lg border-t border-gray-100 overflow-hidden"
                     variants={menuVariants}
                     initial="closed"
                     animate="open"
