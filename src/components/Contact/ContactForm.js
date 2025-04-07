@@ -9,7 +9,7 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
             {/* Gold accent corner */}
             <div className="absolute top-0 right-0 h-20 w-20 bg-gfc-gold rounded-bl-full opacity-20"></div>
 
-            <h3 className="text-xl font-bold mb-6 text-gray-100">Request a Free Quote</h3>
+            <h3 className="text-xl font-bold mb-6 text-white">Request a Free Quote</h3>
 
             {formStatus === 'success' ? (
                 <SuccessMessage />

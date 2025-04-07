@@ -5,7 +5,7 @@ import BusinessHours from './BusinessHours'
 
 const ContactInfo = () => {
     return (
-        <div className="bg-gfc-dark-gray rounded-lg p-6 h-full">
+        <div className="bg-gfc-dark-gray rounded-lg p-9 h-full">
             <h3 className="text-xl text-white font-bold mb-6 flex items-center">
                 <span className="text-gfc-gold mr-2">
                     <svg
