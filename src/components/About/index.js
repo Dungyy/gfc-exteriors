@@ -6,7 +6,7 @@ import Logo from '../../utils/Logo';
 import { TbCertificate } from 'react-icons/tb';
 import { GiHouse } from 'react-icons/gi';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { features } from './constants';
+import { teamFeatures } from '../../global';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -190,7 +190,7 @@ const About = () => {
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8 sm:mb-10"
             >
               <AnimatePresence>
-                {features.map((feature, index) => (
+                {teamFeatures.map((feature, index) => (
                   <motion.div 
                     key={index}
                     initial={{ opacity: 0, y: 20 }}

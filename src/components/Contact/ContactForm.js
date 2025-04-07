@@ -1,6 +1,6 @@
 'use client'
 
-import { services } from './constants'
+import { services } from '../../global'
 import SuccessMessage from './SuccessMessage'
 
 const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
@@ -81,10 +81,11 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                                 Select a service
                             </option>
                             {services.map((service, index) => (
-                                <option key={index} value={service}>
-                                    {service}
+                                <option key={index} value={service.name}>
+                                    {service.name}
                                 </option>
                             ))}
+                            <option value="Other">Other</option>
                         </select>
                     </div>
 

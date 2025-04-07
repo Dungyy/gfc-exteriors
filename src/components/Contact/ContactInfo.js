@@ -1,6 +1,6 @@
 'use client'
 
-import { contactInfo } from './constants'
+import { contactInfo } from '../../global'
 import BusinessHours from './BusinessHours'
 
 const ContactInfo = () => {
@@ -48,12 +48,12 @@ const ContactInfo = () => {
                     <div className="ml-4">
                         <h4 className="text-white font-semibold">Phone</h4>
                         <p className="text-gray-300 mt-1"
-                            onClick={() => window.location.href = `tel:${contactInfo.phone.cesar}`}>
-                            Cesar: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>{contactInfo.phone.cesar}</span>
+                            onClick={() => window.location.href = `tel:${contactInfo.phone1.number}`}>
+                            {contactInfo.phone1.name}: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>{contactInfo.phone1.number}</span>
                         </p>
                         <p className="text-gray-300 mt-1"
-                            onClick={() => window.location.href = `tel:${contactInfo.phone.jose}`}>
-                            Jose: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>{contactInfo.phone.jose}</span>
+                            onClick={() => window.location.href = `tel:${contactInfo.phone2.number}`}>
+                            {contactInfo.phone2.name}: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>{contactInfo.phone2.number}</span>
                         </p>
                     </div>
                 </div>
@@ -79,8 +79,8 @@ const ContactInfo = () => {
                     <div className="ml-4">
                         <h4 className="text-white font-semibold">Email</h4>
                         <p className="text-gray-300 mt-1 hover:text-gfc-gold cursor-pointer transition-colors"
-                            onClick={() => window.location.href = `mailto:${contactInfo.email}`}>
-                            {contactInfo.email}
+                            onClick={() => window.location.href = `mailto:${contactInfo.email.address}`}>
+                            {contactInfo.email.address}
                         </p>
                     </div>
                 </div>

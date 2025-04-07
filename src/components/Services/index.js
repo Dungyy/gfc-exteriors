@@ -4,13 +4,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { services, categories } from './constants'
+import { serviceItems, categories } from '../../global'
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('all')
 
   const filteredServices =
-    activeTab === 'all' ? services : services.filter((service) => service.category === activeTab)
+    activeTab === 'all' ? serviceItems : serviceItems.filter((service) => service.category === activeTab)
 
   return (
     <section id="services" className="py-5 bg-grey">

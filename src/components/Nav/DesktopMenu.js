@@ -1,46 +1,33 @@
 'use client'
 
 import Link from 'next/link'
-import { FaTools, FaInfoCircle, FaAddressCard, FaFileInvoiceDollar } from "react-icons/fa";
+import { mainNavItems, quoteButton } from '../../global'
 
 const DesktopMenu = () => {
-    return (
-        <div className="hidden md:flex items-center mr-4">
-            <nav className="flex items-center space-x-1 mr-2">
-                <Link 
-                    href="#services" 
-                    className="flex items-center px-4 py-2 rounded-lg text-gfc-dark-gray hover:text-gfc-gold hover:bg-gray-50 transition-all"
-                >
-                    <FaTools className="mr-2 text-gfc-gold" size={16} />
-                    <span className="font-medium">Services</span>
-                </Link>
-                
-                <Link 
-                    href="#about" 
-                    className="flex items-center px-4 py-2 rounded-lg text-gfc-dark-gray hover:text-gfc-gold hover:bg-gray-50 transition-all"
-                >
-                    <FaInfoCircle className="mr-2 text-gfc-gold" size={16} />
-                    <span className="font-medium">About</span>
-                </Link>
-                
-                <Link 
-                    href="#contact" 
-                    className="flex items-center px-4 py-2 rounded-lg text-gfc-dark-gray hover:text-gfc-gold hover:bg-gray-50 transition-all"
-                >
-                    <FaAddressCard className="mr-2 text-gfc-gold" size={16} />
-                    <span className="font-medium">Contact</span>
-                </Link>
-            </nav>
-            
-            <Link 
-                href="#contact" 
-                className="flex items-center bg-gfc-gold hover:bg-gfc-light-gold text-white px-5 py-2 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ml-2"
-            >
-                <FaFileInvoiceDollar className="mr-2" size={16} />
-                <span className="font-semibold">Get Free Quote</span>
-            </Link>
-        </div>
-    )
+  return (
+    <div className="hidden md:flex items-center mr-4">
+      <nav className="flex items-center space-x-1 mr-2">
+        {mainNavItems.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className="flex items-center px-4 py-2 rounded-lg text-gfc-dark-gray hover:text-gfc-gold hover:bg-gray-50 transition-all"
+          >
+            <span className="mr-2">{item.icon}</span>
+            <span className="font-medium">{item.name}</span>
+          </Link>
+        ))}
+      </nav>
+      
+      <Link
+        href={quoteButton.href}
+        className="flex items-center bg-gfc-gold hover:bg-gfc-light-gold text-white px-5 py-2 rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ml-2"
+      >
+        <span className="mr-2">{quoteButton.icon}</span>
+        <span className="font-semibold">{quoteButton.name}</span>
+      </Link>
+    </div>
+  )
 }
 
 export default DesktopMenu

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { businessHours } from './constants'
+import { businessHours } from '../../global'
 import { FaClock } from 'react-icons/fa'
 
 const BusinessHours = () => {
