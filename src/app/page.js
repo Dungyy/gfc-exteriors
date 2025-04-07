@@ -21,7 +21,7 @@ export default function Home() {
           <Hero />
 
           {/* Services section with fade up animation */}
-          <AnimatedSection id="services" delay={0.1}>
+          <AnimatedSection id="services" >
             <Services />
           </AnimatedSection>
 

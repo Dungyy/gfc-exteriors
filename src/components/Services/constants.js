@@ -22,8 +22,8 @@ export const services = [
   },
   {
     id: 3,
-    name: 'Window Cleaning',
-    description: 'Crystal clear windows that enhance your home\'s appearance and natural light.',
+    name: 'Window Installation & Cleaning',
+    description: 'Enhance your view with our window installation and cleaning services.',
     details: 'Interior and exterior, screens, tracks, and sills.',
     category: 'exterior',
     icon: <GiWindow className="text-gfc-gold" />,
@@ -60,14 +60,14 @@ export const services = [
     category: 'exterior',
     icon: <MdOutlineFence className="text-gfc-gold" />,
   },
-  {
-    id: 8,
-    name: 'Electrical Repairs',
-    description: 'Professional electrical services for a safe and efficient home.',
-    details: 'Fixture installation, wiring, and troubleshooting.',
-    category: 'maintenance',
-    icon: <GiElectric className="text-gfc-gold" />,
-  },
+  // {
+  //   id: 8,
+  //   name: 'Electrical Repairs',
+  //   description: 'Professional electrical services for a safe and efficient home.',
+  //   details: 'Fixture installation, wiring, and troubleshooting.',
+  //   category: 'maintenance',
+  //   icon: <GiElectric className="text-gfc-gold" />,
+  // },
   {
     id: 9,
     name: 'Seasonal Cleanup',

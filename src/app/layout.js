@@ -16,7 +16,7 @@ export const metadata = {
   description:
     'GFC Exteriors LLC provides professional exterior services including siding, gutters, lawn care, pressure washing, and more in the Montevideo, MN area.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/GFC-svg.svg',
   },
 }
 

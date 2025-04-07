@@ -91,13 +91,12 @@ const About = () => {
               <motion.div 
                 whileHover={{ 
                   y: -5, 
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
+                  boxShadow: "0 25px 50px -12px rgba(119, 119, 119, 0.25)" 
                 }}
                 transition={{ duration: 0.4 }}
-                className=" p-4 sm:p-6 rounded-xl shadow-lg backdrop-blur-sm"
               >
                 <div className=" md:mt-9  aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
-                  <div className="md:mt-9 absolute inset-0 flex items-center justify-center bg-gfc-black">
+                  <div className="md:mt-9 absolute inset-0 flex items-center justify-center bg-gfc-light-gray">
                     <motion.div 
                       initial={{ scale: 0.9, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}

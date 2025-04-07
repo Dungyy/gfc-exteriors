@@ -6,9 +6,9 @@ import Image from 'next/image'
 const Logo = () => {
     return (
         <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-20 h-20">
+            <div className="relative w-20 h-20 ml-4">
                 <Image
-                    src="/bitmap.png"
+                    src="/GFC-svg.svg"
                     alt="GFC Exteriors Logo"
                     fill
                     className="object-contain mix-blend-darken"
@@ -16,7 +16,7 @@ const Logo = () => {
                 />
             </div>
             <div className="hidden md:flex flex-col">
-                <span className="text-lg font-semibold text-gfc-black">Exteriors LLC</span>
+                {/* <span className="text-lg font-semibold text-gfc-black">Exteriors LLC</span> */}
             </div>
         </Link>
     )

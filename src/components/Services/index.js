@@ -30,7 +30,7 @@ const Services = () => {
             <motion.button
               key={category.id}
               onClick={() => setActiveTab(category.id)}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.00 }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 rounded-full transition-all flex items-center ${
                 activeTab === category.id

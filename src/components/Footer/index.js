@@ -14,34 +14,36 @@ const Footer = () => {
         {/* Footer top section */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-4xl text-gfc-gold mr-2">GFC</span>
-              <span className="flex flex-col">
-                <span>Exteriors LLC</span>
-              </span>
-            </h3>
-            <p className="text-gray-400 mb-4">
-              Your one-stop solution for all exterior home services. Quality workmanship and
-              exceptional customer service.
-            </p>
-            <div className="text-gray-300 text-sm">
-              <p className="mb-2 flex items-center">
-                <FaPhone className="text-gfc-gold mr-2" />
-                Cesar: 320-226-2128
-              </p>
-              <p className="mb-2 flex items-center">
-                <FaPhone className="text-gfc-gold mr-2" />
-                Jose: 320-435-1703
-              </p>
-              <p className="flex items-center">
-                <FaEnvelope className="text-gfc-gold mr-2" />
-                gfcexteriors@gmail.com
-              </p>
-            </div>
-          </div>
+                <div>
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <span className="text-4xl text-gfc-gold mr-2">GFC</span>
+                  <span className="flex flex-col">
+                  <span>Exteriors LLC</span>
+                  </span>
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  Your one-stop solution for all exterior home services. Quality workmanship and
+                  exceptional customer service.
+                </p>
+                <div className="text-gray-300 text-sm">
+                  <p className="mb-2 flex items-center">
+                  <FaPhone className="text-gfc-gold mr-2" />
+                  Cesar:&nbsp; 
+                  <a href="tel:+13202262128" className="hover:text-gfc-gold transition-colors">{" "}320-226-2128</a>
+                  </p>
+                  <p className="mb-2 flex items-center">
+                  <FaPhone className="text-gfc-gold mr-2" />
+                  Jose:&nbsp;
+                  <a href="tel:+13204351703" className="hover:text-gfc-gold transition-colors">{" "}320-435-1703</a>
+                  </p>
+                  <p className="flex items-center">
+                  <FaEnvelope className="text-gfc-gold mr-2" />
+                  <a href="mailto:gfcexteriors@gmail.com" className="hover:text-gfc-gold transition-colors">gfcexteriors@gmail.com</a>
+                  </p>
+                </div>
+                </div>
 
-          {/* Services */}
+                {/* Services */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <FaTools className="text-gfc-gold mr-2" />

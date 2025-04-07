@@ -41,7 +41,7 @@ const ServiceCards = () => {
 
                     <motion.div
                         className="text-gfc-gold mb-2 text-xl relative z-10"
-                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileHover={{ scale: 1.0, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
                         {service.icon}
