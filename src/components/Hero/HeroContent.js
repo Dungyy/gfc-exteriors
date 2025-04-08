@@ -6,40 +6,40 @@ import { itemVariants } from './AnimationVariants'
 
 const HeroContent = () => {
     return (
-        <motion.div 
+        <motion.div
             className="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0"
             variants={itemVariants}
         >
-            <motion.h1 
+            <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                 variants={itemVariants}
             >
-                Transform Your{" "}
-                <motion.span 
+                Transform Your{' '}
+                <motion.span
                     className="text-gfc-gold inline-block"
-                    animate={{ 
+                    animate={{
                         scale: [1, 1.05, 1],
-                        transition: { 
-                            repeat: Infinity, 
-                            repeatType: "reverse", 
-                            duration: 2
-                        }
+                        transition: {
+                            repeat: Infinity,
+                            repeatType: 'reverse',
+                            duration: 2,
+                        },
                     }}
                 >
                     Home
-                </motion.span>{" "}
+                </motion.span>{' '}
                 With Expert Exterior Services
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
                 className="text-xl text-gray-700 mb-8 max-w-xl mx-auto lg:mx-0"
                 variants={itemVariants}
             >
-                Professional home exterior solutions from a team you can trust. Quality work, fair
-                pricing, and exceptional results.
+                Professional home exterior solutions from a team you can trust.
+                Quality work, fair pricing, and exceptional results.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
                 className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
                 variants={itemVariants}
             >

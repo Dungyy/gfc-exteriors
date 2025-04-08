@@ -1,16 +1,16 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:tailwindcss/recommended",
-    "plugin:prettier/recommended"
-  ],
-  "plugins": ["react", "tailwindcss", "prettier"],
-  "rules": {
-    "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off",
-    "tailwindcss/classnames-order": "warn",
-    "react/no-unescaped-entities": "off"
-  }
+    "extends": [
+        "next/core-web-vitals",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:tailwindcss/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": ["react", "tailwindcss", "prettier"],
+    "rules": {
+        "prettier/prettier": "error",
+        "react/react-in-jsx-scope": "off",
+        "tailwindcss/classnames-order": "warn",
+        "react/no-unescaped-entities": "off"
+    }
 }

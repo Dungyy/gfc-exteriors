@@ -49,15 +49,17 @@ const Contact = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                        Contact Us
+                    </h2>
                     <div className="h-1 w-24 bg-gfc-gold mx-auto"></div>
                     <p className="text-gfc-dark-gray mt-6 max-w-4xl mx-auto text-xlg md:text-xl">
-                        Ready to transform your property? Contact us today for a free consultation and quote.
+                        Ready to transform your property? Contact us today for a
+                        free consultation and quote.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    
                     {/* Contact Info */}
                     <div className="lg:col-span-1">
                         <ContactInfo />
@@ -65,7 +67,7 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <div className="lg:col-span-2">
-                        <ContactForm 
+                        <ContactForm
                             formData={formData}
                             formStatus={formStatus}
                             handleChange={handleChange}

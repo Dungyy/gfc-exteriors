@@ -34,7 +34,10 @@ const Navbar = () => {
     }, [isMenuOpen])
 
     return (
-        <nav className="bg-gfc-light-gray shadow-md sticky top-0 z-50" ref={navRef}>
+        <nav
+            className="bg-gfc-light-gray shadow-md sticky top-0 z-50"
+            ref={navRef}
+        >
             <div className="container mx-auto">
                 <div className="flex justify-between items-center">
                     {/* Logo and Brand */}
@@ -45,9 +48,9 @@ const Navbar = () => {
 
                     {/* Animated Hamburger Menu Button */}
                     <div className="md:hidden py-2 px-4">
-                        <HamburgerButton 
-                            isMenuOpen={isMenuOpen} 
-                            toggle={() => setIsMenuOpen(!isMenuOpen)} 
+                        <HamburgerButton
+                            isMenuOpen={isMenuOpen}
+                            toggle={() => setIsMenuOpen(!isMenuOpen)}
                         />
                     </div>
                 </div>

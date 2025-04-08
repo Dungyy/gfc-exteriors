@@ -1,7 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { topLineVariants, middleLineVariants, bottomLineVariants } from './animations'
+import {
+    topLineVariants,
+    middleLineVariants,
+    bottomLineVariants,
+} from './animations'
 
 const HamburgerButton = ({ isMenuOpen, toggle }) => {
     return (
@@ -14,21 +18,21 @@ const HamburgerButton = ({ isMenuOpen, toggle }) => {
                 <motion.div
                     variants={topLineVariants}
                     initial="closed"
-                    animate={isMenuOpen ? "open" : "closed"}
+                    animate={isMenuOpen ? 'open' : 'closed'}
                     className="absolute top-1 w-6 h-0.5 bg-gfc-dark-gray"
                     transition={{ duration: 0.3 }}
                 />
                 <motion.div
                     variants={middleLineVariants}
                     initial="closed"
-                    animate={isMenuOpen ? "open" : "closed"}
+                    animate={isMenuOpen ? 'open' : 'closed'}
                     className="absolute top-[11px] w-6 h-0.5 bg-gfc-dark-gray"
                     transition={{ duration: 0.3 }}
                 />
                 <motion.div
                     variants={bottomLineVariants}
                     initial="closed"
-                    animate={isMenuOpen ? "open" : "closed"}
+                    animate={isMenuOpen ? 'open' : 'closed'}
                     className="absolute bottom-1 w-6 h-0.5 bg-gfc-dark-gray"
                     transition={{ duration: 0.3 }}
                 />

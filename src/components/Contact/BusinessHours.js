@@ -5,7 +5,6 @@ import { businessHours } from '../../global'
 import { FaClock } from 'react-icons/fa'
 
 const BusinessHours = () => {
-
     return (
         <div className="mt-8 pt-8 border-t border-gray-700 max-w-md">
             <h4 className="text-white font-semibold mb-4 flex items-center">

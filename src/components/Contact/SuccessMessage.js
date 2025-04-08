@@ -16,7 +16,9 @@ const SuccessMessage = () => {
                         clipRule="evenodd"
                     />
                 </svg>
-                <span>Message sent successfully! We'll get back to you soon.</span>
+                <span>
+                    Message sent successfully! We'll get back to you soon.
+                </span>
             </div>
         </div>
     )

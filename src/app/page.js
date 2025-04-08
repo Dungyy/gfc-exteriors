@@ -12,39 +12,39 @@ import AnimatedSection from '../utils/AnimatedSection'
 import CallBanner from '../utils/CallBanner'
 
 export default function Home() {
-  return (
-    <>
-      <div className="min-h-screen flex flex-col pb-16 md:pb-0">
-        <Navbar />
-        <main>
-          {/* Hero without animation wrapper since it should be visible immediately */}
-          <Hero />
+    return (
+        <>
+            <div className="min-h-screen flex flex-col pb-16 md:pb-0">
+                <Navbar />
+                <main>
+                    {/* Hero without animation wrapper since it should be visible immediately */}
+                    <Hero />
 
-          {/* Services section with fade up animation */}
-          <AnimatedSection id="services" >
-            <Services />
-          </AnimatedSection>
+                    {/* Services section with fade up animation */}
+                    <AnimatedSection id="services">
+                        <Services />
+                    </AnimatedSection>
 
-          {/* About section with fade left animation */}
-          <AnimatedSection id="about" direction="left" delay={0.1}>
-            <About />
-          </AnimatedSection>
+                    {/* About section with fade left animation */}
+                    <AnimatedSection id="about" direction="left" delay={0.1}>
+                        <About />
+                    </AnimatedSection>
 
-          {/* Testimonials section with scale animation
+                    {/* Testimonials section with scale animation
           // <AnimatedSection id="testimonials" direction="scale" delay={0.1}>
           //   <Testimonials />
           // </AnimatedSection> */}
 
-          {/* <Projects /> */}
+                    {/* <Projects /> */}
 
-          {/* Contact section with fade right animation */}
-          <AnimatedSection id="contact" direction="scale" delay={0.1}>
-            <Contact />
-          </AnimatedSection>
-        </main>
-        <Footer />
-        <CallBanner />
-      </div>
-    </>
-  )
+                    {/* Contact section with fade right animation */}
+                    <AnimatedSection id="contact" direction="scale" delay={0.1}>
+                        <Contact />
+                    </AnimatedSection>
+                </main>
+                <Footer />
+                <CallBanner />
+            </div>
+        </>
+    )
 }

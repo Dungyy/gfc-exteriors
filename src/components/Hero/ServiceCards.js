@@ -3,15 +3,15 @@
 import { motion } from 'framer-motion'
 import { fadeInUpVariants, serviceCardVariants } from './AnimationVariants'
 import { FaHome, FaLeaf } from 'react-icons/fa'
-import { MdOutlineRoofing } from "react-icons/md";
+import { MdOutlineRoofing } from 'react-icons/md'
 import { FaWater } from 'react-icons/fa'
 
 const ServiceCards = () => {
     const services = [
         { name: 'Siding', icon: <FaHome size={24} /> },
-        { name: 'Gutters', icon: <MdOutlineRoofing  size={24} /> },
+        { name: 'Gutters', icon: <MdOutlineRoofing size={24} /> },
         { name: 'Lawn Care', icon: <FaLeaf size={24} /> },
-        { name: 'Pressure Washing', icon: <FaWater size={24} /> }
+        { name: 'Pressure Washing', icon: <FaWater size={24} /> },
     ]
 
     return (
@@ -42,11 +42,17 @@ const ServiceCards = () => {
                     <motion.div
                         className="text-gfc-gold mb-2 text-xl relative z-10"
                         whileHover={{ scale: 1.0, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: 400,
+                            damping: 10,
+                        }}
                     >
                         {service.icon}
                     </motion.div>
-                    <div className="font-semibold text-gfc-black relative z-10">{service.name}</div>
+                    <div className="font-semibold text-gfc-black relative z-10">
+                        {service.name}
+                    </div>
                 </motion.div>
             ))}
         </motion.div>

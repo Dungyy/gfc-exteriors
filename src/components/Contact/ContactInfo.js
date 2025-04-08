@@ -47,13 +47,27 @@ const ContactInfo = () => {
                     </div>
                     <div className="ml-4">
                         <h4 className="text-white font-semibold">Phone</h4>
-                        <p className="text-gray-300 mt-1"
-                            onClick={() => window.location.href = `tel:${contactInfo.phone1.number}`}>
-                            {contactInfo.phone1.name}: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>{contactInfo.phone1.number}</span>
+                        <p
+                            className="text-gray-300 mt-1"
+                            onClick={() =>
+                                (window.location.href = `tel:${contactInfo.phone1.number}`)
+                            }
+                        >
+                            {contactInfo.phone1.name}:{' '}
+                            <span className="hover:text-gfc-gold cursor-pointer transition-colors">
+                                {contactInfo.phone1.number}
+                            </span>
                         </p>
-                        <p className="text-gray-300 mt-1"
-                            onClick={() => window.location.href = `tel:${contactInfo.phone2.number}`}>
-                            {contactInfo.phone2.name}: <span className='hover:text-gfc-gold cursor-pointer transition-colors'>{contactInfo.phone2.number}</span>
+                        <p
+                            className="text-gray-300 mt-1"
+                            onClick={() =>
+                                (window.location.href = `tel:${contactInfo.phone2.number}`)
+                            }
+                        >
+                            {contactInfo.phone2.name}:{' '}
+                            <span className="hover:text-gfc-gold cursor-pointer transition-colors">
+                                {contactInfo.phone2.number}
+                            </span>
                         </p>
                     </div>
                 </div>
@@ -78,8 +92,12 @@ const ContactInfo = () => {
                     </div>
                     <div className="ml-4">
                         <h4 className="text-white font-semibold">Email</h4>
-                        <p className="text-gray-300 mt-1 hover:text-gfc-gold cursor-pointer transition-colors"
-                            onClick={() => window.location.href = `mailto:${contactInfo.email.address}`}>
+                        <p
+                            className="text-gray-300 mt-1 hover:text-gfc-gold cursor-pointer transition-colors"
+                            onClick={() =>
+                                (window.location.href = `mailto:${contactInfo.email.address}`)
+                            }
+                        >
                             {contactInfo.email.address}
                         </p>
                     </div>
@@ -110,8 +128,12 @@ const ContactInfo = () => {
                         </svg>
                     </div>
                     <div className="ml-4">
-                        <h4 className="text-white font-semibold">Service Area</h4>
-                        <p className="text-gray-300 mt-1">{contactInfo.location}</p>
+                        <h4 className="text-white font-semibold">
+                            Service Area
+                        </h4>
+                        <p className="text-gray-300 mt-1">
+                            {contactInfo.location}
+                        </p>
                     </div>
                 </div>
             </div>

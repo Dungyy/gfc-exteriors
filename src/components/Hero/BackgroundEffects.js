@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { 
-    floatingCircleVariants, 
-    floatingSquareVariants, 
-    particleVariants 
+import {
+    floatingCircleVariants,
+    floatingSquareVariants,
+    particleVariants,
 } from './AnimationVariants'
 
 const BackgroundEffects = () => {
@@ -37,14 +37,14 @@ const BackgroundEffects = () => {
                     <motion.div
                         key={`line-${i}`}
                         className="absolute h-px bg-gfc-black transform -rotate-45"
-                        initial={{ opacity: 0, width: "0%" }}
-                        animate={{ 
-                            opacity: 0.5, 
-                            width: "200%",
-                            transition: { 
-                                duration: 1.5, 
-                                delay: i * 0.1 
-                            }
+                        initial={{ opacity: 0, width: '0%' }}
+                        animate={{
+                            opacity: 0.5,
+                            width: '200%',
+                            transition: {
+                                duration: 1.5,
+                                delay: i * 0.1,
+                            },
                         }}
                         style={{
                             top: `${i * 100}px`,
@@ -67,7 +67,7 @@ const BackgroundEffects = () => {
                             top: circle.top,
                             left: circle.left,
                             right: circle.right,
-                            zIndex: 1
+                            zIndex: 1,
                         }}
                         custom={i}
                         variants={floatingCircleVariants}
@@ -89,7 +89,7 @@ const BackgroundEffects = () => {
                             left: square.left,
                             right: square.right,
                             bottom: square.bottom,
-                            zIndex: 1
+                            zIndex: 1,
                         }}
                         custom={i}
                         variants={floatingSquareVariants}
@@ -109,7 +109,7 @@ const BackgroundEffects = () => {
                             height: particle.size,
                             left: particle.left,
                             bottom: particle.bottom,
-                            zIndex: 1
+                            zIndex: 1,
                         }}
                         custom={i}
                         variants={particleVariants}

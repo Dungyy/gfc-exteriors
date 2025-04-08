@@ -9,7 +9,9 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
             {/* Gold accent corner */}
             <div className="absolute top-0 right-0 h-20 w-20 bg-gfc-gold rounded-bl-full opacity-20"></div>
 
-            <h3 className="text-xl font-bold mb-6 text-white">Request a Free Quote</h3>
+            <h3 className="text-xl font-bold mb-6 text-white">
+                Request a Free Quote
+            </h3>
 
             {formStatus === 'success' ? (
                 <SuccessMessage />
@@ -17,7 +19,10 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label htmlFor="name" className="block text-gray-200 font-medium mb-2">
+                            <label
+                                htmlFor="name"
+                                className="block text-gray-200 font-medium mb-2"
+                            >
                                 Full Name*
                             </label>
                             <input
@@ -33,7 +38,10 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                         </div>
 
                         <div>
-                            <label htmlFor="phone" className="block text-gray-200 font-medium mb-2">
+                            <label
+                                htmlFor="phone"
+                                className="block text-gray-200 font-medium mb-2"
+                            >
                                 Phone Number*
                             </label>
                             <input
@@ -50,7 +58,10 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                     </div>
 
                     <div>
-                        <label htmlFor="email" className="block text-gray-200 font-medium mb-2">
+                        <label
+                            htmlFor="email"
+                            className="block text-gray-200 font-medium mb-2"
+                        >
                             Email Address*
                         </label>
                         <input
@@ -66,7 +77,10 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                     </div>
 
                     <div>
-                        <label htmlFor="service" className="block text-gray-200 font-medium mb-2">
+                        <label
+                            htmlFor="service"
+                            className="block text-gray-200 font-medium mb-2"
+                        >
                             Service Interested In*
                         </label>
                         <select
@@ -90,7 +104,10 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                     </div>
 
                     <div>
-                        <label htmlFor="message" className="block text-gray-200 font-medium mb-2">
+                        <label
+                            htmlFor="message"
+                            className="block text-gray-200 font-medium mb-2"
+                        >
                             Message
                         </label>
                         <textarea
@@ -114,7 +131,8 @@ const ContactForm = ({ formData, formStatus, handleChange, handleSubmit }) => {
                     </div>
 
                     <div className="text-xs text-gfc-gold text-center">
-                        By submitting this form, you agree to be contacted about our services.
+                        By submitting this form, you agree to be contacted about
+                        our services.
                     </div>
                 </form>
             )}

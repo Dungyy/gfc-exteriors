@@ -15,7 +15,7 @@ const Hero = () => {
 
             {/* Hero content */}
             <div className="container mx-auto px-4 relative z-10">
-                <motion.div 
+                <motion.div
                     className="flex flex-col lg:flex-row items-center"
                     variants={containerVariants}
                     initial="hidden"
