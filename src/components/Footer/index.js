@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { services, quickLinks, contactInfo } from '../../global'
-import { FaPhone, FaEnvelope, FaHome, FaTools, FaArrowUp } from 'react-icons/fa'
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { services, quickLinks, contactInfo } from '../../global';
+import { FaPhone, FaEnvelope, FaHome, FaTools, FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear()
+    const currentYear = new Date().getFullYear();
 
     return (
         <footer className="bg-gfc-black text-white pt-16 pb-8">
@@ -16,17 +16,14 @@ const Footer = () => {
                     {/* Company Info */}
                     <div>
                         <h3 className="text-xl font-bold mb-4 flex items-center">
-                            <span className="text-4xl text-gfc-gold mr-2">
-                                GFC
-                            </span>
+                            <span className="text-4xl text-gfc-gold mr-2">GFC</span>
                             <span className="flex flex-col">
                                 <span>Exteriors LLC</span>
                             </span>
                         </h3>
                         <p className="text-gray-400 mb-4">
-                            Your one-stop solution for all exterior home
-                            services. Quality workmanship and exceptional
-                            customer service.
+                            Your one-stop solution for all exterior home services. Quality
+                            workmanship and exceptional customer service.
                         </p>
                         <div className="text-gray-300 text-sm">
                             <p className="mb-2 flex items-center">
@@ -76,9 +73,7 @@ const Footer = () => {
                                         href={service.href}
                                         className="text-gray-400 hover:text-gfc-gold transition-colors flex items-center"
                                     >
-                                        <span className="text-gfc-gold mr-2">
-                                            ›
-                                        </span>
+                                        <span className="text-gfc-gold mr-2">›</span>
                                         {service.name}
                                     </Link>
                                 </li>
@@ -99,9 +94,7 @@ const Footer = () => {
                                         href={link.href}
                                         className="text-gray-400 hover:text-gfc-gold transition-colors flex items-center"
                                     >
-                                        <span className="text-gfc-gold mr-2">
-                                            ›
-                                        </span>
+                                        <span className="text-gfc-gold mr-2">›</span>
                                         {link.name}
                                     </Link>
                                 </li>
@@ -135,14 +128,11 @@ const Footer = () => {
 
                 {/* Footer bottom - Copyright */}
                 <div className="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-                    <p>
-                        &copy; {currentYear} GFC Exteriors LLC | All rights
-                        reserved.
-                    </p>
+                    <p>&copy; {currentYear} GFC Exteriors LLC | All rights reserved.</p>
                 </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

@@ -17,7 +17,7 @@ import {
     FaHardHat,
     FaThumbsUp,
     FaMoneyBillWave,
-} from 'react-icons/fa'
+} from 'react-icons/fa';
 
 import {
     MdOutlineCleaningServices,
@@ -25,10 +25,10 @@ import {
     MdOutlineFence,
     MdCleaningServices,
     MdHighQuality,
-} from 'react-icons/md'
+} from 'react-icons/md';
 
-import { GiWindow } from 'react-icons/gi'
-import { BiSolidLandscape } from 'react-icons/bi'
+import { GiWindow } from 'react-icons/gi';
+import { BiSolidLandscape } from 'react-icons/bi';
 
 // Main navigation items (used in both desktop and mobile menus)
 export const mainNavItems = [
@@ -50,7 +50,7 @@ export const mainNavItems = [
         icon: <FaAddressCard className="text-gfc-gold" size={16} />,
         mobileIcon: <FaAddressCard className="text-gfc-gold" size={18} />,
     },
-]
+];
 
 // Quote button (special navigation item)
 export const quoteButton = {
@@ -58,7 +58,7 @@ export const quoteButton = {
     href: '#contact',
     icon: <FaFileInvoiceDollar size={16} />,
     mobileIcon: <FaFileInvoiceDollar size={18} />,
-}
+};
 
 // Categories for services filtering
 export const categories = [
@@ -67,7 +67,7 @@ export const categories = [
     { id: 'landscaping', name: 'Landscaping', icon: <BiSolidLandscape /> },
     { id: 'seasonal', name: 'Seasonal', icon: <FaSnowflake /> },
     { id: 'maintenance', name: 'Maintenance', icon: <FaTools /> },
-]
+];
 
 // About section features
 export const teamFeatures = [
@@ -79,8 +79,7 @@ export const teamFeatures = [
     {
         icon: <MdHighQuality />,
         title: 'Quality Materials',
-        description:
-            'We use only the highest quality materials for lasting results.',
+        description: 'We use only the highest quality materials for lasting results.',
     },
     {
         icon: <FaThumbsUp />,
@@ -92,7 +91,7 @@ export const teamFeatures = [
         title: 'Competitive Pricing',
         description: 'Quality service at fair and transparent prices.',
     },
-]
+];
 
 // Services offered (for services section)
 export const serviceItems = [
@@ -108,8 +107,7 @@ export const serviceItems = [
     {
         id: 2,
         name: 'Gutter Cleaning',
-        description:
-            'Prevent water damage with regular gutter cleaning and maintenance.',
+        description: 'Prevent water damage with regular gutter cleaning and maintenance.',
         details: 'Debris removal, downspout clearing, and minor repairs.',
         category: 'maintenance',
         icon: <MdOutlineCleaningServices className="text-gfc-gold" />,
@@ -117,8 +115,7 @@ export const serviceItems = [
     {
         id: 3,
         name: 'Window Installation & Cleaning',
-        description:
-            'Enhance your view with our window installation and cleaning services.',
+        description: 'Enhance your view with our window installation and cleaning services.',
         details: 'Interior and exterior, screens, tracks, and sills.',
         category: 'exterior',
         icon: <GiWindow className="text-gfc-gold" />,
@@ -126,8 +123,7 @@ export const serviceItems = [
     {
         id: 4,
         name: 'Lawn Care',
-        description:
-            'Keep your lawn looking its best with our professional care services.',
+        description: 'Keep your lawn looking its best with our professional care services.',
         details: 'Mowing, trimming, edging, and fertilization.',
         category: 'landscaping',
         icon: <FaLeaf className="text-gfc-gold" />,
@@ -135,8 +131,7 @@ export const serviceItems = [
     {
         id: 5,
         name: 'Snow Removal',
-        description:
-            'Stay safe during winter with prompt and reliable snow removal.',
+        description: 'Stay safe during winter with prompt and reliable snow removal.',
         details: 'Driveways, walkways, and commercial properties.',
         category: 'seasonal',
         icon: <FaSnowflake className="text-gfc-gold" />,
@@ -144,8 +139,7 @@ export const serviceItems = [
     {
         id: 6,
         name: 'Roof Cleaning',
-        description:
-            'Extend the life of your roof with our specialized cleaning services.',
+        description: 'Extend the life of your roof with our specialized cleaning services.',
         details: 'Moss removal, algae treatment, and preventative care.',
         category: 'maintenance',
         icon: <MdOutlineRoofing className="text-gfc-gold" />,
@@ -153,8 +147,7 @@ export const serviceItems = [
     {
         id: 7,
         name: 'Fence Installation',
-        description:
-            'Enhance privacy and security with our quality fence installation.',
+        description: 'Enhance privacy and security with our quality fence installation.',
         details: 'Wood, vinyl, chain link, and custom designs.',
         category: 'exterior',
         icon: <MdOutlineFence className="text-gfc-gold" />,
@@ -170,13 +163,12 @@ export const serviceItems = [
     {
         id: 9,
         name: 'Seasonal Cleanup',
-        description:
-            'Prepare your property for the changing seasons with our thorough cleanup.',
+        description: 'Prepare your property for the changing seasons with our thorough cleanup.',
         details: 'Spring and fall cleanups, leaf removal, and bed preparation.',
         category: 'seasonal',
         icon: <MdCleaningServices className="text-gfc-gold" />,
     },
-]
+];
 
 // Services for footer
 export const services = [
@@ -210,7 +202,7 @@ export const services = [
         href: '#services',
         icon: <FaTruck className="text-gfc-gold" />,
     },
-]
+];
 
 // Quick links for footer
 export const quickLinks = [
@@ -235,7 +227,7 @@ export const quickLinks = [
         href: '#contact',
         icon: <FaAddressCard className="text-gfc-gold" />,
     },
-]
+];
 
 // Business hours (for footer)
 export const businessHours = [
@@ -251,7 +243,7 @@ export const businessHours = [
         day: 'Sunday',
         hours: 'Closed',
     },
-]
+];
 
 // Contact information (for footer and contact section)
 export const contactInfo = {
@@ -270,4 +262,4 @@ export const contactInfo = {
         href: 'mailto:gfcexteriors@gmail.com',
     },
     location: 'Montevideo, MN and surrounding areas',
-}
+};

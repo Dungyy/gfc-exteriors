@@ -1,11 +1,7 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import {
-    topLineVariants,
-    middleLineVariants,
-    bottomLineVariants,
-} from './animations'
+import { motion } from 'framer-motion';
+import { topLineVariants, middleLineVariants, bottomLineVariants } from './animations';
 
 const HamburgerButton = ({ isMenuOpen, toggle }) => {
     return (
@@ -38,7 +34,7 @@ const HamburgerButton = ({ isMenuOpen, toggle }) => {
                 />
             </div>
         </button>
-    )
-}
+    );
+};
 
-export default HamburgerButton
+export default HamburgerButton;

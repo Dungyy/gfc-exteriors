@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { fadeInUpVariants, serviceCardVariants } from './AnimationVariants'
-import { FaHome, FaLeaf } from 'react-icons/fa'
-import { MdOutlineRoofing } from 'react-icons/md'
-import { FaWater } from 'react-icons/fa'
+import { motion } from 'framer-motion';
+import { fadeInUpVariants, serviceCardVariants } from './AnimationVariants';
+import { FaHome, FaLeaf } from 'react-icons/fa';
+import { MdOutlineRoofing } from 'react-icons/md';
+import { FaWater } from 'react-icons/fa';
 
 const ServiceCards = () => {
     const services = [
@@ -12,7 +12,7 @@ const ServiceCards = () => {
         { name: 'Gutters', icon: <MdOutlineRoofing size={24} /> },
         { name: 'Lawn Care', icon: <FaLeaf size={24} /> },
         { name: 'Pressure Washing', icon: <FaWater size={24} /> },
-    ]
+    ];
 
     return (
         <motion.div
@@ -50,13 +50,11 @@ const ServiceCards = () => {
                     >
                         {service.icon}
                     </motion.div>
-                    <div className="font-semibold text-gfc-black relative z-10">
-                        {service.name}
-                    </div>
+                    <div className="font-semibold text-gfc-black relative z-10">{service.name}</div>
                 </motion.div>
             ))}
         </motion.div>
-    )
-}
+    );
+};
 
-export default ServiceCards
+export default ServiceCards;

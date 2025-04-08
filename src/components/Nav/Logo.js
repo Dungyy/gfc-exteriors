@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Logo = () => {
     return (
@@ -19,7 +19,7 @@ const Logo = () => {
                 {/* <span className="text-lg font-semibold text-gfc-black">Exteriors LLC</span> */}
             </div>
         </Link>
-    )
-}
+    );
+};
 
-export default Logo
+export default Logo;

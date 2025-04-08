@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { mainNavItems, quoteButton } from '../../global'
+import Link from 'next/link';
+import { mainNavItems, quoteButton } from '../../global';
 
 const DesktopMenu = () => {
     return (
@@ -27,7 +27,7 @@ const DesktopMenu = () => {
                 <span className="font-semibold">{quoteButton.name}</span>
             </Link>
         </div>
-    )
-}
+    );
+};
 
-export default DesktopMenu
+export default DesktopMenu;

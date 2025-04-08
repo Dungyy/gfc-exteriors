@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import {
     floatingCircleVariants,
     floatingSquareVariants,
     particleVariants,
-} from './AnimationVariants'
+} from './AnimationVariants';
 
 const BackgroundEffects = () => {
     // Background circles and squares position arrays
@@ -14,20 +14,20 @@ const BackgroundEffects = () => {
         { size: 80, top: '60%', left: '8%', delay: 1 },
         { size: 120, top: '75%', right: '10%', delay: 2 },
         { size: 60, top: '20%', right: '15%', delay: 3 },
-    ]
+    ];
 
     const squares = [
         { size: 60, top: '15%', right: '20%', delay: 0 },
         { size: 100, bottom: '10%', left: '15%', delay: 1 },
         { size: 80, top: '50%', right: '5%', delay: 2 },
-    ]
+    ];
 
     const particles = Array.from({ length: 10 }).map((_, i) => ({
         size: Math.random() * 8 + 4,
         left: `${Math.random() * 90 + 5}%`,
         bottom: `-10px`,
         delay: i,
-    }))
+    }));
 
     return (
         <>
@@ -121,7 +121,7 @@ const BackgroundEffects = () => {
             {/* Light diagonal gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-yellow-50/20 pointer-events-none"></div>
         </>
-    )
-}
+    );
+};
 
-export default BackgroundEffects
+export default BackgroundEffects;

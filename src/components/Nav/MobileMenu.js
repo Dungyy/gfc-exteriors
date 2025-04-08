@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { menuVariants, menuItemVariants } from './animations'
-import { mainNavItems, quoteButton } from '../../global'
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { menuVariants, menuItemVariants } from './animations';
+import { mainNavItems, quoteButton } from '../../global';
 
 const MobileMenu = ({ isOpen, closeMenu }) => {
     return (
@@ -28,12 +28,8 @@ const MobileMenu = ({ isOpen, closeMenu }) => {
                                         href={item.href}
                                         className="flex items-center py-3 px-3 rounded-lg text-gfc-dark-gray hover:text-gfc-gold hover:bg-gray-50 transition-all"
                                     >
-                                        <span className="mr-3">
-                                            {item.mobileIcon}
-                                        </span>
-                                        <span className="font-medium">
-                                            {item.name}
-                                        </span>
+                                        <span className="mr-3">{item.mobileIcon}</span>
+                                        <span className="font-medium">{item.name}</span>
                                     </Link>
                                 </motion.div>
                             ))}
@@ -47,12 +43,8 @@ const MobileMenu = ({ isOpen, closeMenu }) => {
                                     href={quoteButton.href}
                                     className="flex items-center justify-center py-3 px-4 bg-gfc-gold hover:bg-gfc-light-gold text-white rounded-lg transition-all shadow-md"
                                 >
-                                    <span className="mr-2">
-                                        {quoteButton.mobileIcon}
-                                    </span>
-                                    <span className="font-semibold">
-                                        {quoteButton.name}
-                                    </span>
+                                    <span className="mr-2">{quoteButton.mobileIcon}</span>
+                                    <span className="font-semibold">{quoteButton.name}</span>
                                 </Link>
                             </motion.div>
                         </nav>
@@ -60,7 +52,7 @@ const MobileMenu = ({ isOpen, closeMenu }) => {
                 </motion.div>
             )}
         </AnimatePresence>
-    )
-}
+    );
+};
 
-export default MobileMenu
+export default MobileMenu;

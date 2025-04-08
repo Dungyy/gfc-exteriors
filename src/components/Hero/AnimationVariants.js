@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 // Animation variants for Hero components
 export const containerVariants = {
@@ -10,7 +10,7 @@ export const containerVariants = {
             delayChildren: 0.3,
         },
     },
-}
+};
 
 export const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -19,7 +19,7 @@ export const itemVariants = {
         opacity: 1,
         transition: { duration: 0.5 },
     },
-}
+};
 
 export const fadeInUpVariants = {
     hidden: { y: 60, opacity: 0 },
@@ -28,11 +28,11 @@ export const fadeInUpVariants = {
         opacity: 1,
         transition: { duration: 0.6, ease: 'easeOut' },
     },
-}
+};
 
 export const serviceCardVariants = {
     hidden: { scale: 0.8, opacity: 0 },
-    visible: (i) => ({
+    visible: i => ({
         scale: 1,
         opacity: 1,
         transition: {
@@ -47,7 +47,7 @@ export const serviceCardVariants = {
         scale: 1.03,
         transition: { duration: 0.2 },
     },
-}
+};
 
 export const logoVariants = {
     hidden: { scale: 0.8, opacity: 0, rotate: -5 },
@@ -62,11 +62,11 @@ export const logoVariants = {
             delay: 0.5,
         },
     },
-}
+};
 
 // Background animation variants
 export const floatingCircleVariants = {
-    animate: (i) => ({
+    animate: i => ({
         y: [0, -15, 0],
         x: [0, i % 2 === 0 ? 10 : -10, 0],
         scale: [1, 1.05, 1],
@@ -76,10 +76,10 @@ export const floatingCircleVariants = {
             ease: 'easeInOut',
         },
     }),
-}
+};
 
 export const floatingSquareVariants = {
-    animate: (i) => ({
+    animate: i => ({
         rotate: [0, i % 2 === 0 ? 10 : -10, 0],
         scale: [1, 1.1, 1],
         transition: {
@@ -88,10 +88,10 @@ export const floatingSquareVariants = {
             ease: 'easeInOut',
         },
     }),
-}
+};
 
 export const particleVariants = {
-    animate: (i) => ({
+    animate: i => ({
         y: [0, -100 - i * 50],
         x: [0, i % 2 === 0 ? 50 : -50],
         opacity: [0, 0.5, 0],
@@ -103,4 +103,4 @@ export const particleVariants = {
             delay: i * 3,
         },
     }),
-}
+};

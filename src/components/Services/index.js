@@ -1,18 +1,18 @@
 // components/Services.js
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { serviceItems, categories } from '../../global'
+import { useState } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { serviceItems, categories } from '../../global';
 
 const Services = () => {
-    const [activeTab, setActiveTab] = useState('all')
+    const [activeTab, setActiveTab] = useState('all');
 
     const filteredServices =
         activeTab === 'all'
             ? serviceItems
-            : serviceItems.filter((service) => service.category === activeTab)
+            : serviceItems.filter(service => service.category === activeTab);
 
     return (
         <section id="services" className="py-5 bg-grey">
@@ -23,14 +23,14 @@ const Services = () => {
                     </h2>
                     <div className="h-1 w-20 bg-gfc-gold mx-auto"></div>
                     <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-                        We offer a comprehensive range of exterior services to
-                        meet all your home maintenance needs.
+                        We offer a comprehensive range of exterior services to meet all your home
+                        maintenance needs.
                     </p>
                 </div>
 
                 {/* Service Categories */}
                 <div className="flex flex-wrap justify-center mb-10 gap-2">
-                    {categories.map((category) => (
+                    {categories.map(category => (
                         <motion.button
                             key={category.id}
                             onClick={() => setActiveTab(category.id)}
@@ -50,7 +50,7 @@ const Services = () => {
 
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredServices.map((service) => (
+                    {filteredServices.map(service => (
                         <motion.div
                             key={service.id}
                             initial={{ opacity: 0, y: 20 }}
@@ -76,12 +76,8 @@ const Services = () => {
                                 <h3 className="text-xl font-bold mb-2 text-gfc-black group-hover:text-gfc-gold transition-colors">
                                     {service.name}
                                 </h3>
-                                <p className="text-gray-600 mb-4">
-                                    {service.description}
-                                </p>
-                                <div className="text-sm text-gray-500 mb-6">
-                                    {service.details}
-                                </div>
+                                <p className="text-gray-600 mb-4">{service.description}</p>
+                                <div className="text-sm text-gray-500 mb-6">{service.details}</div>
                                 <Link
                                     href="#contact"
                                     className="inline-flex items-center text-gfc-gold hover:text-gfc-black font-medium transition-colors"
@@ -114,10 +110,7 @@ const Services = () => {
 
                 {/* CTA Button */}
                 <div className="text-center mt-12">
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link
                             href="#contact"
                             className="btn bg-gfc-black hover:bg-gfc-gold text-white py-3 px-8 rounded-md inline-flex items-center transition-all hover:shadow-lg"
@@ -142,7 +135,7 @@ const Services = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Services
+export default Services;

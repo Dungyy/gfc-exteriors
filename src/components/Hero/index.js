@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { containerVariants } from './AnimationVariants'
-import BackgroundEffects from './BackgroundEffects'
-import HeroContent from './HeroContent'
-import HeroLogo from './HeroLogo'
-import ServiceCards from './ServiceCards'
+import { motion } from 'framer-motion';
+import { containerVariants } from './AnimationVariants';
+import BackgroundEffects from './BackgroundEffects';
+import HeroContent from './HeroContent';
+import HeroLogo from './HeroLogo';
+import ServiceCards from './ServiceCards';
 
 const Hero = () => {
     return (
@@ -32,7 +32,7 @@ const Hero = () => {
                 <ServiceCards />
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;

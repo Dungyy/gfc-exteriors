@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { contactInfo } from '../../global'
-import BusinessHours from './BusinessHours'
+import { contactInfo } from '../../global';
+import BusinessHours from './BusinessHours';
 
 const ContactInfo = () => {
     return (
@@ -128,12 +128,8 @@ const ContactInfo = () => {
                         </svg>
                     </div>
                     <div className="ml-4">
-                        <h4 className="text-white font-semibold">
-                            Service Area
-                        </h4>
-                        <p className="text-gray-300 mt-1">
-                            {contactInfo.location}
-                        </p>
+                        <h4 className="text-white font-semibold">Service Area</h4>
+                        <p className="text-gray-300 mt-1">{contactInfo.location}</p>
                     </div>
                 </div>
             </div>
@@ -141,7 +137,7 @@ const ContactInfo = () => {
             {/* Business Hours Component */}
             <BusinessHours />
         </div>
-    )
-}
+    );
+};
 
-export default ContactInfo
+export default ContactInfo;

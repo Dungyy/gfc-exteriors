@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { businessHours } from '../../global'
-import { FaClock } from 'react-icons/fa'
+import React from 'react';
+import { businessHours } from '../../global';
+import { FaClock } from 'react-icons/fa';
 
 const BusinessHours = () => {
     return (
@@ -20,7 +20,7 @@ const BusinessHours = () => {
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default BusinessHours
+export default BusinessHours;

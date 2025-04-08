@@ -34,4 +34,4 @@ export const projects = [
         image: '/Soffit&Fascia.jpg',
         category: 'siding',
     },
-]
+];

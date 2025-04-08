@@ -1,29 +1,29 @@
 // components/CallBanner.js
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { contactInfo, quoteButton } from '../global'
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { contactInfo, quoteButton } from '../global';
+import Link from 'next/link';
 
 const CallBanner = () => {
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(false);
 
     // Check if we're on mobile
     useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth < 999)
-        }
+            setIsMobile(window.innerWidth < 999);
+        };
 
         // Initial check
-        checkMobile()
+        checkMobile();
 
         // Add listener for window resize
-        window.addEventListener('resize', checkMobile)
+        window.addEventListener('resize', checkMobile);
 
         // Cleanup
-        return () => window.removeEventListener('resize', checkMobile)
-    }, [])
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Button animation variants
     const buttonVariants = {
@@ -36,7 +36,7 @@ const CallBanner = () => {
             },
         },
         tap: { scale: 0.95 },
-    }
+    };
 
     // Pulsing animation for the quote button
     const quoteButtonVariants = {
@@ -49,10 +49,10 @@ const CallBanner = () => {
                 repeatType: 'reverse',
             },
         },
-    }
+    };
 
     // Don't render anything on desktop
-    if (typeof window !== 'undefined' && !isMobile) return null
+    if (typeof window !== 'undefined' && !isMobile) return null;
 
     return (
         <motion.div
@@ -96,9 +96,7 @@ const CallBanner = () => {
                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                             />
                         </svg>
-                        <span className="text-xs font-bold">
-                            {quoteButton.name}
-                        </span>
+                        <span className="text-xs font-bold">{quoteButton.name}</span>
                     </motion.div>
                 </Link>
 
@@ -133,12 +131,8 @@ const CallBanner = () => {
                                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                             />
                         </motion.svg>
-                        <span className="text-xs font-bold">
-                            {contactInfo.phone1.name}
-                        </span>
-                        <span className="text-xs">
-                            {contactInfo.phone1.number}
-                        </span>
+                        <span className="text-xs font-bold">{contactInfo.phone1.name}</span>
+                        <span className="text-xs">{contactInfo.phone1.number}</span>
                     </motion.div>
                 </a>
 
@@ -173,17 +167,13 @@ const CallBanner = () => {
                                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                             />
                         </motion.svg>
-                        <span className="text-xs font-bold">
-                            {contactInfo.phone2.name}
-                        </span>
-                        <span className="text-xs">
-                            {contactInfo.phone2.number}
-                        </span>
+                        <span className="text-xs font-bold">{contactInfo.phone2.name}</span>
+                        <span className="text-xs">{contactInfo.phone2.number}</span>
                     </motion.div>
                 </a>
             </div>
         </motion.div>
-    )
-}
+    );
+};
 
-export default CallBanner
+export default CallBanner;

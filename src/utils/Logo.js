@@ -1,6 +1,6 @@
 // components/Logo.jsx
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Logo = ({ className = '' }) => {
     return (
@@ -45,7 +45,7 @@ const Logo = ({ className = '' }) => {
                 </div>
             </motion.div>
         </div>
-    )
-}
+    );
+};
 
-export default Logo
+export default Logo;

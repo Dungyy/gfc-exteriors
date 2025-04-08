@@ -1,54 +1,48 @@
 // components/AnimatedSection.js
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
-const AnimatedSection = ({
-    children,
-    className = '',
-    delay = 0,
-    id,
-    direction = 'up',
-}) => {
+const AnimatedSection = ({ children, className = '', delay = 0, id, direction = 'up' }) => {
     // Set up variants based on direction
-    let variants = {}
+    let variants = {};
 
     switch (direction) {
         case 'up':
             variants = {
                 hidden: { y: 100, opacity: 0 },
                 visible: { y: 0, opacity: 1 },
-            }
-            break
+            };
+            break;
         case 'down':
             variants = {
                 hidden: { y: -100, opacity: 0 },
                 visible: { y: 0, opacity: 1 },
-            }
-            break
+            };
+            break;
         case 'left':
             variants = {
                 hidden: { x: -100, opacity: 0 },
                 visible: { x: 0, opacity: 1 },
-            }
-            break
+            };
+            break;
         case 'right':
             variants = {
                 hidden: { x: 100, opacity: 0 },
                 visible: { x: 0, opacity: 1 },
-            }
-            break
+            };
+            break;
         case 'scale':
             variants = {
                 hidden: { scale: 0.8, opacity: 0 },
                 visible: { scale: 1, opacity: 1 },
-            }
-            break
+            };
+            break;
         default:
             variants = {
                 hidden: { opacity: 0 },
                 visible: { opacity: 1 },
-            }
+            };
     }
 
     return (
@@ -67,7 +61,7 @@ const AnimatedSection = ({
         >
             {children}
         </motion.section>
-    )
-}
+    );
+};
 
-export default AnimatedSection
+export default AnimatedSection;

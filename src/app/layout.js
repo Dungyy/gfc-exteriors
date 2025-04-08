@@ -1,15 +1,15 @@
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
     subsets: ['latin'],
-})
+});
 
 const geistMono = Geist_Mono({
     variable: '--font-geist-mono',
     subsets: ['latin'],
-})
+});
 
 export const metadata = {
     title: 'GFC Exteriors LLC',
@@ -18,7 +18,7 @@ export const metadata = {
     icons: {
         icon: '/GFC-svg.svg',
     },
-}
+};
 
 export default function RootLayout({ children }) {
     return (
@@ -30,5 +30,5 @@ export default function RootLayout({ children }) {
                 {children}
             </body>
         </html>
-    )
+    );
 }

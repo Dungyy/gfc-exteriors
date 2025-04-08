@@ -2,17 +2,17 @@
 export const topLineVariants = {
     closed: { rotate: 0, y: 0 },
     open: { rotate: 45, y: 9 },
-}
+};
 
 export const middleLineVariants = {
     closed: { opacity: 1 },
     open: { opacity: 0 },
-}
+};
 
 export const bottomLineVariants = {
     closed: { rotate: 0, y: 0 },
     open: { rotate: -45, y: -9 },
-}
+};
 
 // Mobile menu animation variants
 export const menuVariants = {
@@ -36,7 +36,7 @@ export const menuVariants = {
             staggerDirection: 1,
         },
     },
-}
+};
 
 export const menuItemVariants = {
     closed: {
@@ -49,4 +49,4 @@ export const menuItemVariants = {
         y: 0,
         transition: { duration: 0.1 },
     },
-}
+};

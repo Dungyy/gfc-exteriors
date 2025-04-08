@@ -17,4 +17,4 @@ export const testimonials = [
         location: 'Waite Park, MN',
         rating: 5,
     },
-]
+];

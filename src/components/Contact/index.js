@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import ContactInfo from './ContactInfo'
-import ContactForm from './ContactForm'
+import { useState } from 'react';
+import ContactInfo from './ContactInfo';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -11,29 +11,29 @@ const Contact = () => {
         phone: '',
         service: '',
         message: '',
-    })
+    });
 
-    const [formStatus, setFormStatus] = useState(null)
+    const [formStatus, setFormStatus] = useState(null);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData((prev) => ({ ...prev, [name]: value }))
-    }
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        setFormStatus('success')
+    const handleSubmit = e => {
+        e.preventDefault();
+        setFormStatus('success');
         setTimeout(() => {
-            setFormStatus(null)
+            setFormStatus(null);
             setFormData({
                 name: '',
                 email: '',
                 phone: '',
                 service: '',
                 message: '',
-            })
-        }, 3000)
-    }
+            });
+        }, 3000);
+    };
 
     return (
         <section
@@ -49,13 +49,11 @@ const Contact = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                        Contact Us
-                    </h2>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
                     <div className="h-1 w-24 bg-gfc-gold mx-auto"></div>
                     <p className="text-gfc-dark-gray mt-6 max-w-4xl mx-auto text-xlg md:text-xl">
-                        Ready to transform your property? Contact us today for a
-                        free consultation and quote.
+                        Ready to transform your property? Contact us today for a free consultation
+                        and quote.
                     </p>
                 </div>
 
@@ -77,7 +75,7 @@ const Contact = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;

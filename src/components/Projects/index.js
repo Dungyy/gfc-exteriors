@@ -1,86 +1,82 @@
 // components/ProjectShowcase.js
-'use client'
+'use client';
 
-import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
-import AnimatedSection from '../../utils/AnimatedSection'
-import { projects } from './constants'
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import AnimatedSection from '../../utils/AnimatedSection';
+import { projects } from './constants';
 
 const ProjectShowcase = () => {
     // Replace these with your actual project images
 
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [direction, setDirection] = useState(0) // -1 for left, 1 for right
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-    const autoPlayRef = useRef(null)
-    const touchStartX = useRef(0)
-    const touchEndX = useRef(0)
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const autoPlayRef = useRef(null);
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
 
     // Auto-advance slides
     useEffect(() => {
         if (isAutoPlaying) {
             autoPlayRef.current = setInterval(() => {
-                setDirection(1)
-                setCurrentIndex(
-                    (prevIndex) => (prevIndex + 1) % projects.length
-                )
-            }, 5000)
+                setDirection(1);
+                setCurrentIndex(prevIndex => (prevIndex + 1) % projects.length);
+            }, 5000);
         }
 
         return () => {
             if (autoPlayRef.current) {
-                clearInterval(autoPlayRef.current)
+                clearInterval(autoPlayRef.current);
             }
-        }
-    }, [isAutoPlaying])
+        };
+    }, [isAutoPlaying]);
 
     // Navigate to previous slide
     const prevSlide = () => {
-        setDirection(-1)
-        setIsAutoPlaying(false)
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? projects.length - 1 : prevIndex - 1
-        )
-    }
+        setDirection(-1);
+        setIsAutoPlaying(false);
+        setCurrentIndex(prevIndex => (prevIndex === 0 ? projects.length - 1 : prevIndex - 1));
+    };
 
     // Navigate to next slide
     const nextSlide = () => {
-        setDirection(1)
-        setIsAutoPlaying(false)
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
-    }
+        setDirection(1);
+        setIsAutoPlaying(false);
+        setCurrentIndex(prevIndex => (prevIndex + 1) % projects.length);
+    };
 
     // Jump to a specific slide
-    const goToSlide = (index) => {
-        setDirection(index > currentIndex ? 1 : -1)
-        setIsAutoPlaying(false)
-        setCurrentIndex(index)
-    }
+    const goToSlide = index => {
+        setDirection(index > currentIndex ? 1 : -1);
+        setIsAutoPlaying(false);
+        setCurrentIndex(index);
+    };
 
     // Handle touch events for mobile swiping
-    const handleTouchStart = (e) => {
-        touchStartX.current = e.touches[0].clientX
-    }
+    const handleTouchStart = e => {
+        touchStartX.current = e.touches[0].clientX;
+    };
 
-    const handleTouchMove = (e) => {
-        touchEndX.current = e.touches[0].clientX
-    }
+    const handleTouchMove = e => {
+        touchEndX.current = e.touches[0].clientX;
+    };
 
     const handleTouchEnd = () => {
         if (touchStartX.current - touchEndX.current > 50) {
             // Swipe left, go to next slide
-            nextSlide()
+            nextSlide();
         }
         if (touchEndX.current - touchStartX.current > 50) {
             // Swipe right, go to previous slide
-            prevSlide()
+            prevSlide();
         }
-    }
+    };
 
     // Animation variants
     const slideVariants = {
-        enter: (direction) => ({
+        enter: direction => ({
             x: direction > 0 ? 1000 : -1000,
             opacity: 0,
         }),
@@ -88,23 +84,21 @@ const ProjectShowcase = () => {
             x: 0,
             opacity: 1,
         },
-        exit: (direction) => ({
+        exit: direction => ({
             x: direction > 0 ? -1000 : 1000,
             opacity: 0,
         }),
-    }
+    };
 
     return (
         <AnimatedSection id="projects" className="py-20 bg-gfc-light-gray">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Projects
-                    </h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
                     <div className="h-1 w-20 bg-gfc-gold mx-auto"></div>
                     <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-                        Browse through our portfolio of completed projects and
-                        see the quality of our work firsthand.
+                        Browse through our portfolio of completed projects and see the quality of
+                        our work firsthand.
                     </p>
                 </div>
 
@@ -147,9 +141,7 @@ const ProjectShowcase = () => {
                                         <h3 className="text-2xl font-bold">
                                             {projects[currentIndex].title}
                                         </h3>
-                                        <p className="mt-2">
-                                            {projects[currentIndex].description}
-                                        </p>
+                                        <p className="mt-2">{projects[currentIndex].description}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -201,11 +193,7 @@ const ProjectShowcase = () => {
                         <button
                             onClick={() => setIsAutoPlaying(!isAutoPlaying)}
                             className="absolute right-4 top-4 bg-gfc-black/60 hover:bg-gfc-black text-white p-2 rounded-full z-10"
-                            aria-label={
-                                isAutoPlaying
-                                    ? 'Pause slideshow'
-                                    : 'Play slideshow'
-                            }
+                            aria-label={isAutoPlaying ? 'Pause slideshow' : 'Play slideshow'}
                         >
                             {isAutoPlaying ? (
                                 <svg
@@ -331,7 +319,7 @@ const ProjectShowcase = () => {
                 </div>
             </div>
         </AnimatedSection>
-    )
-}
+    );
+};
 
-export default ProjectShowcase
+export default ProjectShowcase;

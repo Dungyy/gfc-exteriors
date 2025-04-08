@@ -1,38 +1,38 @@
 // components/About.js
 
-'use client'
-import { useEffect, useState, useRef } from 'react'
-import Logo from '../../utils/Logo'
-import { TbCertificate } from 'react-icons/tb'
-import { GiHouse } from 'react-icons/gi'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { teamFeatures } from '../../global'
+'use client';
+import { useEffect, useState, useRef } from 'react';
+import Logo from '../../utils/Logo';
+import { TbCertificate } from 'react-icons/tb';
+import { GiHouse } from 'react-icons/gi';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { teamFeatures } from '../../global';
 
 const About = () => {
-    const [isVisible, setIsVisible] = useState(false)
-    const sectionRef = useRef(null)
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ['start end', 'end start'],
-    })
+    });
 
     // Create scroll-based animations
-    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1])
-    const scale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1])
-    const y = useTransform(scrollYProgress, [0, 0.2], [50, 0])
+    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+    const scale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1]);
+    const y = useTransform(scrollYProgress, [0, 0.2], [50, 0]);
 
     // Parallax effect for decorative elements
-    const decorLeft = useTransform(scrollYProgress, [0, 1], [-5, -15])
-    const decorRight = useTransform(scrollYProgress, [0, 1], [5, 15])
+    const decorLeft = useTransform(scrollYProgress, [0, 1], [-5, -15]);
+    const decorRight = useTransform(scrollYProgress, [0, 1], [5, 15]);
 
     // Trigger entrance animations on component mount
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsVisible(true)
-        }, 100)
+            setIsVisible(true);
+        }, 100);
 
-        return () => clearTimeout(timer)
-    }, [])
+        return () => clearTimeout(timer);
+    }, []);
 
     // Custom animation variants
     const containerVariants = {
@@ -44,7 +44,7 @@ const About = () => {
                 delayChildren: 0.2,
             },
         },
-    }
+    };
 
     const itemVariants = {
         hidden: { y: 20, opacity: 0 },
@@ -56,7 +56,7 @@ const About = () => {
                 ease: [0.25, 0.1, 0.25, 1.0], // Custom cubic-bezier easing
             },
         },
-    }
+    };
 
     return (
         <section
@@ -91,8 +91,7 @@ const About = () => {
                             <motion.div
                                 whileHover={{
                                     y: -5,
-                                    boxShadow:
-                                        '0 25px 50px -12px rgba(119, 119, 119, 0.25)',
+                                    boxShadow: '0 25px 50px -12px rgba(119, 119, 119, 0.25)',
                                 }}
                                 transition={{ duration: 0.4 }}
                             >
@@ -140,15 +139,12 @@ const About = () => {
                                 }}
                                 whileHover={{
                                     scale: 1.05,
-                                    boxShadow:
-                                        '0 15px 30px -10px rgba(0, 0, 0, 0.3)',
+                                    boxShadow: '0 15px 30px -10px rgba(0, 0, 0, 0.3)',
                                 }}
                                 className="absolute -right-3 sm:-right-5 -bottom-3 sm:-bottom-5 bg-gfc-gold text-gfc-black w-20 h-20 sm:w-28 sm:h-28 rounded-full flex items-center justify-center shadow-lg"
                             >
                                 <div className="text-center">
-                                    <div className="text-xl sm:text-3xl font-bold">
-                                        5+
-                                    </div>
+                                    <div className="text-xl sm:text-3xl font-bold">5+</div>
                                     <div className="text-[10px] sm:text-xs font-medium">
                                         Years Exp.
                                     </div>
@@ -158,10 +154,7 @@ const About = () => {
                     </motion.div>
 
                     {/* Content Side */}
-                    <motion.div
-                        variants={itemVariants}
-                        className="w-full lg:w-1/2"
-                    >
+                    <motion.div variants={itemVariants} className="w-full lg:w-1/2">
                         <motion.div
                             variants={itemVariants}
                             className="text-sm font-semibold text-gfc-gold tracking-widest uppercase mb-3 flex items-center"
@@ -181,23 +174,20 @@ const About = () => {
                             variants={itemVariants}
                             className="text-gray-700 mb-5 sm:mb-6 text-sm sm:text-base leading-relaxed"
                         >
-                            GFC Exteriors LLC is a locally owned and operated
-                            company providing top-quality exterior services to
-                            homeowners across the region. With a focus on
-                            customer satisfaction and exceptional workmanship,
-                            we&apos;ve built a reputation for reliability and
-                            excellence.
+                            GFC Exteriors LLC is a locally owned and operated company providing
+                            top-quality exterior services to homeowners across the region. With a
+                            focus on customer satisfaction and exceptional workmanship, we&apos;ve
+                            built a reputation for reliability and excellence.
                         </motion.p>
 
                         <motion.p
                             variants={itemVariants}
                             className="text-gray-700 mb-8 sm:mb-10 text-sm sm:text-base leading-relaxed"
                         >
-                            Our team brings together years of experience in all
-                            aspects of exterior home services. From siding and
-                            gutters to lawn care and pressure washing, we have
-                            the expertise to handle all your exterior
-                            maintenance needs with precision and care.
+                            Our team brings together years of experience in all aspects of exterior
+                            home services. From siding and gutters to lawn care and pressure
+                            washing, we have the expertise to handle all your exterior maintenance
+                            needs with precision and care.
                         </motion.p>
 
                         {/* Feature boxes */}
@@ -220,8 +210,7 @@ const About = () => {
                                         }}
                                         whileHover={{
                                             y: -8,
-                                            boxShadow:
-                                                '0 15px 30px -10px rgba(0, 0, 0, 0.2)',
+                                            boxShadow: '0 15px 30px -10px rgba(0, 0, 0, 0.2)',
                                             transition: { duration: 0.3 },
                                         }}
                                         className="flex border-gray-100 items-start p-4 sm:p-5 bg-white rounded-xl shadow-sm transition-all duration-300 backdrop-blur-sm bg-white/90 border border-gray-100"
@@ -254,10 +243,7 @@ const About = () => {
                             whileHover={{ x: 5 }}
                             className="flex items-center mt-10 py-3 px-4 rounded-lg border border-gray-200 inline-block"
                         >
-                            <motion.div
-                                whileHover={{ rotate: 360 }}
-                                transition={{ duration: 0.6 }}
-                            >
+                            <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
                                 <TbCertificate className="text-2xl text-gfc-gold mr-3" />
                             </motion.div>
                             <span className="text-sm font-medium text-gray-700">
@@ -268,7 +254,7 @@ const About = () => {
                 </motion.div>
             </motion.div>
         </section>
-    )
-}
+    );
+};
 
-export default About
+export default About;

@@ -1,15 +1,12 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { logoVariants } from './AnimationVariants'
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { logoVariants } from './AnimationVariants';
 
 const HeroLogo = () => {
     return (
-        <motion.div
-            className="lg:w-1/2 flex justify-center"
-            variants={logoVariants}
-        >
+        <motion.div className="lg:w-1/2 flex justify-center" variants={logoVariants}>
             <motion.div
                 className="p-10 rounded-xl flex justify-center items-center relative"
                 whileHover={{ scale: 1.02, rotate: 2 }}
@@ -28,7 +25,7 @@ const HeroLogo = () => {
                 </div>
             </motion.div>
         </motion.div>
-    )
-}
+    );
+};
 
-export default HeroLogo
+export default HeroLogo;

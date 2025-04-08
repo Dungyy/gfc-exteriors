@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { itemVariants } from './AnimationVariants'
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { itemVariants } from './AnimationVariants';
 
 const HeroContent = () => {
     return (
@@ -35,8 +35,8 @@ const HeroContent = () => {
                 className="text-xl text-gray-700 mb-8 max-w-xl mx-auto lg:mx-0"
                 variants={itemVariants}
             >
-                Professional home exterior solutions from a team you can trust.
-                Quality work, fair pricing, and exceptional results.
+                Professional home exterior solutions from a team you can trust. Quality work, fair
+                pricing, and exceptional results.
             </motion.p>
 
             <motion.div
@@ -44,10 +44,7 @@ const HeroContent = () => {
                 variants={itemVariants}
             >
                 {/* Animated Gradient Button */}
-                <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                         href="#services"
                         className="bg-gradient-to-r from-yellow-500 to-gfc-gold hover:from-yellow-600 hover:to-yellow-500 text-white font-bold py-3 px-8 rounded-md shadow-md transition-all hover:shadow-xl transform hover:-translate-y-1 inline-block"
@@ -57,10 +54,7 @@ const HeroContent = () => {
                 </motion.div>
 
                 {/* Animated Outlined Button */}
-                <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                         href="#contact"
                         className="border-2 border-gfc-gold text-gfc-gold hover:bg-gfc-gold hover:text-white py-3 px-8 rounded-md transition-all shadow-md hover:shadow-lg inline-block"
@@ -70,7 +64,7 @@ const HeroContent = () => {
                 </motion.div>
             </motion.div>
         </motion.div>
-    )
-}
+    );
+};
 
-export default HeroContent
+export default HeroContent;

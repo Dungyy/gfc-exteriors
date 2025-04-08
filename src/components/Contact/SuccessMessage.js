@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 const SuccessMessage = () => {
     return (
@@ -16,12 +16,10 @@ const SuccessMessage = () => {
                         clipRule="evenodd"
                     />
                 </svg>
-                <span>
-                    Message sent successfully! We&apos;ll get back to you soon.
-                </span>
+                <span>Message sent successfully! We&apos;ll get back to you soon.</span>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SuccessMessage
+export default SuccessMessage;
