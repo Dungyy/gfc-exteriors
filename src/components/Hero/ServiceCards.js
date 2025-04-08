@@ -24,7 +24,7 @@ const ServiceCards = () => {
             {services.map((service, index) => (
                 <motion.div
                     key={index}
-                    className="p-4 rounded-lg border border-gray-100 hover:border-gfc-gold hover:shadow-md transition-all cursor-pointer relative overflow-hidden"
+                    className="p-4 rounded-lg border border-gray-200 hover:border-gfc-gold hover:shadow-md transition-all cursor-pointer relative overflow-hidden"
                     custom={index}
                     variants={serviceCardVariants}
                     initial="hidden"

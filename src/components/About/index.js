@@ -171,7 +171,7 @@ const About = () => {
             >
               GFC Exteriors LLC is a locally owned and operated company providing top-quality
               exterior services to homeowners across the region. With a focus on customer
-              satisfaction and exceptional workmanship, we've built a reputation for reliability and
+              satisfaction and exceptional workmanship, we&apos;ve built a reputation for reliability and
               excellence.
             </motion.p>
 
@@ -207,7 +207,7 @@ const About = () => {
                       boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.2)",
                       transition: { duration: 0.3 }
                     }}
-                    className="flex items-start p-4 sm:p-5 bg-white rounded-xl shadow-sm transition-all duration-300 backdrop-blur-sm bg-white/90 border border-gray-100"
+                    className="flex border-gray-100 items-start p-4 sm:p-5 bg-white rounded-xl shadow-sm transition-all duration-300 backdrop-blur-sm bg-white/90 border border-gray-100"
                   >
                     <motion.div 
                       whileHover={{ 

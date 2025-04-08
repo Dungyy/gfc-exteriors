@@ -53,7 +53,7 @@ const Services = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative overflow-hidden bg-gfc-light-gray rounded-lg shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-gfc-gold"
+              className="group relative border-gray-200 overflow-hidden bg-gfc-light-gray rounded-lg shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:border-gfc-gold"
             >
               <div className="p-6">
                 <div className="text-4xl mb-4 text-gfc-gold">
