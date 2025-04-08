@@ -17,7 +17,7 @@ const SuccessMessage = () => {
                     />
                 </svg>
                 <span>
-                    Message sent successfully! We'll get back to you soon.
+                    Message sent successfully! We&apos;ll get back to you soon.
                 </span>
             </div>
         </div>

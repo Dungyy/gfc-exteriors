@@ -33,7 +33,7 @@ const ProjectShowcase = () => {
                 clearInterval(autoPlayRef.current)
             }
         }
-    }, [isAutoPlaying, projects.length])
+    }, [isAutoPlaying])
 
     // Navigate to previous slide
     const prevSlide = () => {

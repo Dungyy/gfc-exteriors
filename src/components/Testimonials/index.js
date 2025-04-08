@@ -14,7 +14,7 @@ const Testimonials = () => {
         }, 8000)
 
         return () => clearInterval(interval)
-    }, [testimonials.length])
+    }, [])
 
     return (
         <section id="testimonials" className="py-20 bg-white">
@@ -25,8 +25,8 @@ const Testimonials = () => {
                     </h2>
                     <div className="h-1 w-20 bg-gfc-gold mx-auto"></div>
                     <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
-                        Don't just take our word for it. Here's what our
-                        satisfied customers have to say about our services.
+                        Don&apos;t just take our word for it. Here&apos;s what
+                        our satisfied customers have to say about our services.
                     </p>
                 </div>
 
@@ -37,12 +37,12 @@ const Testimonials = () => {
                         <div className="absolute top-0 left-0 w-20 h-20 bg-gfc-gold opacity-10 rounded-br-3xl"></div>
                         <div className="absolute bottom-0 right-0 w-20 h-20 bg-gfc-gold opacity-10 rounded-tl-3xl"></div>
                         <div className="absolute -top-6 -right-6 text-8xl text-gfc-gold opacity-10">
-                            "
+                            &ldquo;
                         </div>
 
                         {/* Quote icon */}
                         <div className="absolute top-8 left-8 text-4xl text-gfc-gold">
-                            "
+                            &ldquo;
                         </div>
 
                         {testimonials.map((testimonial, index) => (
