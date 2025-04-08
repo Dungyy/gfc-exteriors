@@ -6,6 +6,23 @@
     "license": "MIT",
     "description": "GFC Exteriors - A Next.js 15.2.4 project with Tailwind CSS",
     "author": "GFC Exteriors - dungy",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dungy/gfc-exteriors.git"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=8.0.0"
+    },
+    "keywords": [
+        "nextjs",
+        "react",
+        "gfcexteriors",
+        "tailwindcss",
+        "exteriors",
+        "construction",
+        "website"
+    ],
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "next build",

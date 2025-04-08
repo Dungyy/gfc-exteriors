@@ -4,7 +4,7 @@
 
 This is the official [website](https://gfc-exteriors.vercel.app) for GFC Exteriors LLC, featuring professional exterior services including siding, gutters, lawn care, pressure washing, and more in the Montevideo, MN area.
 
-![GFC Exteriors Banner](public/bitmap.png)
+![GFC Exteriors Banner](public/GFC-svg.svg)
 
 ## For Non-Technical Users
 
@@ -26,10 +26,19 @@ If you're not a developer but need to run or test this website on your computer,
 
 You'll need to install:
 
-- [Node.js](https://nodejs.org/en/) - Download and install the "LTS" version
+- [Node.js](https://nodejs.org/en/) - Download version 18 and install the "LTS" version
 - A code editor like [Visual Studio Code](https://code.visualstudio.com/)
 
 #### Installation Steps
+1. **Clone the project**
+
+    - Open a command prompt or terminal
+    - Run this command to download the project:
+      ```bash
+      git clone https://github.com/dungyy/gfc-exteriors.git
+      ```
+    - If you don't have Git installed, [download it here](https://git-scm.com/downloads)
+    - Alternatively, you can download the ZIP file directly from GitHub by clicking "Code" > "Download ZIP"
 
 1. **Download the project**
 
